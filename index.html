@@ -11,7 +11,7 @@
   <!-- CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
   <!-- JS -->
-  <script defer src="assets/js/app.js"></script>
+  <script defer type="module" src="assets/js/app.js"></script>
   <title>CookBook App</title>
 </head>
 <body>
@@ -22,9 +22,17 @@
       <form class="auth__form">
         <label for="username">What do you want us to call you?</label>
         <input type="text" id="username" placeholder="Enter a username">
+        <div id="error-username" class="auth__error hide">
+          <span>The username is not available</span>
+          <span class="material-icons">error_outline</span>
+        </div>
         <label for="password">Create a password</label>
         <input type="password" id="password" placeholder="Create a password">
-        <button type="submit" class="auth__btn">Create</button>
+        <div id="error-password" class="auth__error hide">
+          <span>The password is not correct</span>
+          <span class="material-icons">error_outline</span>
+        </div>
+        <button type="submit" id="form-btn" class="auth__btn">Create</button>
       </form>
     </div>
   </section>

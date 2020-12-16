@@ -21,6 +21,22 @@
   border-radius: 10px;
   padding-left: .5em;
 }
+.auth__form > input.wrong {
+  border: 2px solid red;
+  margin: 0;
+}
+.auth__error {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: red;
+  margin: .25em 0 .5em;
+}
+.auth__err .material-icons {
+  font-size: 24px;
+  vertical-align: middle;
+}
+
 .auth__btn {
   height: 50px;
   margin: .5em 0;
@@ -42,4 +58,8 @@
 .auth__btn:hover {
   background-image: linear-gradient(to bottom, var(--darkGreen), var(--lightGreen));
   transform: scaleX(1.05);
+}
+.auth__btn[disabled] {
+  cursor: not-allowed;
+  background: var(--green);
 }
