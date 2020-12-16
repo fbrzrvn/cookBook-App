@@ -2,6 +2,8 @@ const registerUsername = document.getElementById('register-username');
 const registerPassword = document.getElementById('register-password');
 const errorUsername = document.getElementById('error-register-username');
 const errorPassword = document.getElementById('error-register-password');
+const loginUsername = document.getElementById('login-username');
+const loginPassword = document.getElementById('login-password');
 
 const saveUser = e => {
   e.preventDefault();
@@ -53,9 +55,8 @@ const validatePassword = () => {
   }
 }
 
-const validateUserLogin = () => {
-  const loginUsername = document.getElementById('login-username');
-  const loginPassword = document.getElementById('login-password');
+const validateUserLogin = (e) => {
+  e.preventDefault();
   let usersList = JSON.parse(localStorage.getItem('users'));
   let usersName = usersList.map(el => el.name);
   let usersPassword = usersList.map(el => el.password);
@@ -82,6 +83,37 @@ const validateUserLogin = () => {
       document.getElementById('error-login-username').classList.add('hide');
     }
   }
+
+  let validatedUser = JSON.parse(sessionStorage.getItem('currentUser')) || {};
+
+  validatedUser = {
+    name: loginUsername.value,
+    password: loginPassword.value
+  }
+  sessionStorage.setItem('currentUser', JSON.stringify(validatedUser));
+
+  return validatedUser;
 }
 
-export { saveUser, validateUsername, validatePassword, validateUserLogin };
+const checkIfAuth = () => {
+  const authUser = JSON.parse(sessionStorage.getItem('currentUser'));
+  if (authUser) {
+    document.getElementById('login').classList.add('hide');
+    document.getElementById('register').classList.add('hide');
+    document.getElementById('home').classList.remove('hide');
+  }
+  console.log(authUser);
+}
+
+const logout = () => {
+  sessionStorage.clear();
+  return document.body.innerHTML =
+    `
+      <h2>You are successfully logged out!<h2>
+      <p>Hope to see you soon</p>
+    `;
+}
+
+
+
+export { saveUser, validateUsername, validatePassword, validateUserLogin, checkIfAuth, logout };
