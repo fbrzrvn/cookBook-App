@@ -19,6 +19,7 @@ body {
   font-weight: 400;
   background: var(--black);
   color: var(--white);
+  overflow: hidden;
 }
 h1 {
   /* font-family: 'Bitter', serif; */
@@ -33,6 +34,13 @@ h2 {
   font-family: 'Bitter', serif;
   font-size: 1.5rem;
   font-weight: 500;
+}
+a {
+  text-decoration: none;
+  color: var(--darkGreen);
+}
+a:hover {
+  color: var(--lightGreen);
 }
 .hide {
   display: none;

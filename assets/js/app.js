@@ -1,9 +1,12 @@
-import { saveUser, validatePassword, validateUsername } from './models/user.js';
+import { saveUser, validatePassword, validateUserLogin, validateUsername } from './models/user.js';
 
-const formBtn = document.getElementById('form-btn');
-const username = document.getElementById('username');
-const password = document.getElementById('password');
+const registerUsername = document.getElementById('register-username');
+const registerPassword = document.getElementById('register-password');
+const registerBtn = document.getElementById('register-btn');
+const loginBtn = document.getElementById('login-btn');
 
-formBtn.addEventListener('click', saveUser);
-username.addEventListener('blur', validateUsername);
-password.addEventListener('blur', validatePassword);
+registerBtn.addEventListener('click', saveUser);
+registerUsername.addEventListener('blur', validateUsername);
+registerPassword.addEventListener('blur', validatePassword);
+
+loginBtn.addEventListener('click', validateUserLogin);
