@@ -4,12 +4,15 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  padding: 0 1em;
 }
 .auth__form {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   margin: 2em 0;
+  width: 250px;
+  max-width: 320px;
 }
 .auth__form > label {
   margin-bottom: .5em;
@@ -20,6 +23,21 @@
   border: 1px solid var(--black);
   border-radius: 10px;
   padding-left: .5em;
+}
+.auth__form > input.wrong {
+  border: 2px solid red;
+  margin: 0;
+}
+.auth__error {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: red;
+  margin: .25em 0 .5em;
+}
+.auth__err .material-icons {
+  font-size: 24px;
+  vertical-align: middle;
 }
 .auth__btn {
   height: 50px;
