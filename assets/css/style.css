@@ -45,3 +45,7 @@ a:hover {
 .hide {
   display: none;
 }
+.container {
+  padding: 2em;
+  text-align: center;
+}

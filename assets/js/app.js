@@ -1,4 +1,6 @@
-import { saveUser, validatePassword, validateUserLogin, validateUsername, checkIfAuth, logout } from './models/user.js';
+import { saveUser, validateUsername, validatePassword } from './auth/register.js';
+import { validateUserLogin, checkIfAuth } from './auth/login.js';
+import { logout } from './auth/logout.js';
 
 const registerUsername = document.getElementById('register-username');
 const registerPassword = document.getElementById('register-password');
@@ -7,11 +9,9 @@ const loginBtn = document.getElementById('login-btn');
 const logoutBtn = document.getElementById('logout-btn');
 
 window.addEventListener('load', checkIfAuth, false);
-
-registerBtn.addEventListener('click', saveUser);
 registerUsername.addEventListener('blur', validateUsername);
 registerPassword.addEventListener('blur', validatePassword);
-
+registerBtn.addEventListener('click', saveUser);
 loginBtn.addEventListener('click', validateUserLogin);
 logoutBtn.addEventListener('click', logout);
 

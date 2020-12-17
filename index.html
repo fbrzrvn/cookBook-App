@@ -43,14 +43,14 @@
       <h1>Chilly</h1>
       <h2>To continue, log in to Chilly.</h2>
       <form class="auth__form">
-        <label for="login-username">What do you want us to call you?</label>
-        <input type="text" id="login-username" placeholder="Enter a username">
+        <label for="login-username">Email address or username</label>
+        <input type="text" id="login-username" placeholder="Email or username">
         <div id="error-login-username" class="auth__error hide">
-          <span>The username is not correct</span>
+          <span>Enter a valid username</span>
           <span class="material-icons">error_outline</span>
         </div>
-        <label for="login-password">Enter your password</label>
-        <input type="password" id="login-password" placeholder="Create a password">
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" placeholder="Password">
         <div id="error-login-password" class="auth__error hide">
           <span>The password is not correct</span>
           <span class="material-icons">error_outline</span>
@@ -62,8 +62,10 @@
   </section>
 
   <section id="home" class="">
-    <h2>This is the home page</h2>
-    <button id="logout-btn" class="auth__btn">Logout</button>
+    <div class="container">
+      <h2>This is the home page</h2>
+      <button id="logout-btn" class="auth__btn">Logout</button>
+    </div>
   </section>
 </body>
 </html>

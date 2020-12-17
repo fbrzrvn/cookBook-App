@@ -4,12 +4,15 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  padding: 0 1em;
 }
 .auth__form {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   margin: 2em 0;
+  width: 250px;
+  max-width: 320px;
 }
 .auth__form > label {
   margin-bottom: .5em;
@@ -36,7 +39,6 @@
   font-size: 24px;
   vertical-align: middle;
 }
-
 .auth__btn {
   height: 50px;
   margin: .5em 0;
@@ -58,8 +60,4 @@
 .auth__btn:hover {
   background-image: linear-gradient(to bottom, var(--darkGreen), var(--lightGreen));
   transform: scaleX(1.05);
-}
-.auth__btn[disabled] {
-  cursor: not-allowed;
-  background: var(--green);
 }
