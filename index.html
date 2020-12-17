@@ -15,9 +15,10 @@
   <title>CookBook App</title>
 </head>
 <body>
-  <section id="register" class="">
+  <!-- AUTH register -->
+  <section id="register">
     <div class="auth__container">
-      <h1>Chilly</h1>
+      <h1 class="logo">Chilly</h1>
       <h2>Register free to start to use the app</h2>
       <form class="auth__form">
         <label for="register-username">What do you want us to call you?</label>
@@ -37,10 +38,10 @@
       <p>Do you already have an account? <a href="#login"> Log in</a>.</p>
     </div>
   </section>
-
+  <!-- AUTH login -->
   <section id="login">
     <div class="auth__container">
-      <h1>Chilly</h1>
+      <h1 class="logo">Chilly</h1>
       <h2>To continue, log in to Chilly.</h2>
       <form class="auth__form">
         <label for="login-username">Email address or username</label>
@@ -60,11 +61,39 @@
       <p>Don't have an account? <a href="#register"> Sign Up</a>.</p>
     </div>
   </section>
-
-  <section id="home" class="">
+  <!-- HOME -->
+  <section id="home" class="hide">
+    <header>
+      <nav class="navbar">
+        <div class="navbar__logo">
+          <h1 class="logo">Chilly</h1>
+        </div>
+        <ul class="navbar__links" id="navbar-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="">Recently Added</a></li>
+          <li><a href="">My List</a></li>
+          <li><a href="#user" id="user-profile"><span class="material-icons">account_circle</span></a></li>
+          <li><a href=""><span id="logout-btn" class="material-icons">login</span></a></li>
+        </ul>
+        <div class="navbar__hamburger" id="hamburger">
+          <div class="top"></div>
+          <div class="middle"></div>
+          <div class="bottom"></div>
+        </div>
+      </nav>
+    </header>
+    <div class="home__wrapper">
+      <form action="" class="home__search">
+        <span class="material-icons">search</span>
+        <input type="search" placeholder="Search a recipe">
+      </form>
+    </div>
+  </section>
+  <!-- USER Profile -->
+  <section id="user" class="hide">
     <div class="container">
-      <h2>This is the home page</h2>
-      <button id="logout-btn" class="auth__btn">Logout</button>
+      <h1>My List</h1>
+      <a href="/">Home</a>
     </div>
   </section>
 </body>
