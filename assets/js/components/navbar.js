@@ -10,4 +10,14 @@ const showUserProfile = () => {
   document.getElementById('user').classList.remove('hide');
 }
 
-export { activeNavbar, showUserProfile };
+const showCreateNewRecipe = () => {
+  document.getElementById('home').classList.add('hide');
+  document.getElementById('new-recipe').classList.remove('hide');
+}
+
+const showLastRecipe = () => {
+  document.getElementById('home').classList.add('hide');
+  document.getElementById('last-recipe').classList.remove('hide');
+}
+
+export { activeNavbar, showUserProfile, showCreateNewRecipe, showLastRecipe };

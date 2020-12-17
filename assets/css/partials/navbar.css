@@ -40,6 +40,11 @@
 .navbar__links a:hover {
   color: var(--lightGreen);
 }
+.navbar__links a span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1em;
+}
 .navbar__hamburger {
   display: none;
 }

@@ -69,11 +69,10 @@
           <h1 class="logo">Chilly</h1>
         </div>
         <ul class="navbar__links" id="navbar-links">
-          <li><a href="/">Home</a></li>
-          <li><a href="">Recently Added</a></li>
-          <li><a href="">My List</a></li>
-          <li><a href="#user" id="user-profile"><span class="material-icons">account_circle</span></a></li>
-          <li><a href=""><span id="logout-btn" class="material-icons">login</span></a></li>
+          <li><a href="#last-recipe" id="recently-added">Recently Added <span class="material-icons">receipt</span></a></li>
+          <li><a href="#new-recipe" id="create-new-recipe">add a recipe <span class="material-icons">note_add</span></a></li>
+          <li><a href="#user" id="user-profile">my list <span class="material-icons">account_circle</span></a></li>
+          <li><a href="#">logout <span id="logout-btn"class="material-icons">login</span></a></li>
         </ul>
         <div class="navbar__hamburger" id="hamburger">
           <div class="top"></div>
@@ -83,16 +82,69 @@
       </nav>
     </header>
     <div class="home__wrapper">
-      <form action="" class="home__search">
-        <span class="material-icons">search</span>
-        <input type="search" placeholder="Search a recipe">
-      </form>
+      <!-- Search input -->
+      <div class="home__search">
+        <form id="search-input" class="home__search__form">
+          <span class="material-icons">search</span>
+          <input type="search" placeholder="Search a recipe">
+        </form>
+      </div>
+      <div class="home__recipe__card">
+        <div class="home__recipe__card__title">
+          <h3>Popular on Chilly</h3>
+        </div>
+        <div class="home__recipe__card__body">
+          <img src="https://source.unsplash.com/200x200" alt="random-img" class="popular-img">
+          <img src="https://source.unsplash.com/200x200" alt="random-img" class="popular-img">
+          <img src="https://source.unsplash.com/200x200" alt="random-img" class="popular-img">
+          <img src="https://source.unsplash.com/200x200" alt="random-img" class="popular-img">
+          <img src="https://source.unsplash.com/200x200" alt="random-img" class="popular-img">
+        </div>
+      </div>
+      <div class="home__recipe__card">
+        <div class="home__recipe__card__title">
+          <h3>Dinner</h3>
+        </div>
+        <div class="home__recipe__card__body">
+          <img src="https://source.unsplash.com/user/brookelark/200x200" alt="random-img">
+        </div>
+      </div>
+      <div class="home__recipe__card">
+        <div class="home__recipe__card__title">
+          <h3>Healthy</h3>
+        </div>
+        <div class="home__recipe__card__body">
+          <img src="https://source.unsplash.com/user/jannisbrandt/200x200" alt="random-img">
+        </div>
+      </div>
+      <div class="home__recipe__card">
+        <div class="home__recipe__card__title">
+          <h3>Veggy</h3>
+        </div>
+        <div class="home__recipe__card__body">
+          <img src="https://source.unsplash.com/user/jannisbrandt/200x200" alt="random-img">
+        </div>
+      </div>
     </div>
   </section>
   <!-- USER Profile -->
   <section id="user" class="hide">
     <div class="container">
       <h1>My List</h1>
+      <a href="/">Home</a>
+    </div>
+  </section>
+  <!-- Create NEW recipe -->
+  <section id="new-recipe" class="hide">
+    <div class="container">
+      <h1>Create a new recipe</h1>
+      <a href="/">Home</a>
+    </div>
+  </section>
+  <!-- RECENTLY Added Recipes -->
+  <section id="last-recipe" class="hide">
+    <div class="container">
+      <h1>Lastest Recipes</h1>
       <a href="/">Home</a>
     </div>
   </section>
