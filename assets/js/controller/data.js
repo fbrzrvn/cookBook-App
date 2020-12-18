@@ -12,7 +12,10 @@ const renderRecipe = () => {
   recipes.forEach( el => {
     let div = document.createElement('div');
     div.className = 'recipe';
-    div.innerHTML = `<img src="${el.image}" alt="food">`;
+    div.innerHTML = `
+      <a href="#">
+        <img src="${el.image}" alt="food">
+      </a>`;
     switch (el.category) {
       case 'healthy and veggy':
         document.getElementById('healthy').appendChild(div);
