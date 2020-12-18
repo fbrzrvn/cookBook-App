@@ -52,10 +52,9 @@ a:hover {
 .hide {
   display: none;
 }
-.container {
+.wrapper {
+  padding-top: 10vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding: 2em;
 }

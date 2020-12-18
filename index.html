@@ -61,15 +61,16 @@
       <p>Don't have an account? <a href="#register"> Sign Up</a>.</p>
     </div>
   </section>
-  <!-- HOME -->
-  <section id="home" class="hide">
+  <!-- NAVBAR -->
+  <section id="navbar" class="hide">
     <header>
       <nav class="navbar">
         <div class="navbar__logo">
           <h1 class="logo">Chilly</h1>
         </div>
         <ul class="navbar__links" id="navbar-links">
-          <li><a href="#last-recipe" id="recently-added">Recently Added <span class="material-icons">receipt</span></a></li>
+          <li><a href="/">home <span class="material-icons">home</span></a></li>
+          <li><a href="#last-recipe" id="recently-added">recently added <span class="material-icons">receipt</span></a></li>
           <li><a href="#new-recipe" id="create-new-recipe">add a recipe <span class="material-icons">note_add</span></a></li>
           <li><a href="#user" id="user-profile">my list <span class="material-icons">account_circle</span></a></li>
           <li><a href="#">logout <span id="logout-btn"class="material-icons">login</span></a></li>
@@ -81,7 +82,10 @@
         </div>
       </nav>
     </header>
-    <div class="home__wrapper">
+  </section>
+  <!-- HOME -->
+  <section id="home" class="hide">
+    <div class="wrapper">
       <!-- Search input -->
       <div class="home__search">
         <form id="search-input" class="home__search__form">
@@ -129,21 +133,21 @@
   </section>
   <!-- USER Profile -->
   <section id="user" class="hide">
-    <div class="container">
+    <div class="wrapper">
       <h1>My List</h1>
       <a href="/">Home</a>
     </div>
   </section>
   <!-- Create NEW recipe -->
   <section id="new-recipe" class="hide">
-    <div class="container">
+    <div class="wrapper">
       <h1>Create a new recipe</h1>
       <a href="/">Home</a>
     </div>
   </section>
   <!-- RECENTLY Added Recipes -->
   <section id="last-recipe" class="hide">
-    <div class="container">
+    <div class="wrapper">
       <h1>Lastest Recipes</h1>
       <a href="/">Home</a>
     </div>
