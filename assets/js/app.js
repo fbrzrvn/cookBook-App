@@ -3,7 +3,8 @@ import { validateUserLogin, checkIfAuth } from './components/auth/login.js';
 import { logout } from './components/auth/logout.js';
 import { activeNavbar, showCreateNewRecipe, showLastRecipe, showUserProfile } from './components/navbar.js';
 import { recipe } from './data/recipe.js';
-import { addRecipe, saveRecipe } from './controller/data.js';
+import { addRecipe, renderRecipe, saveRecipe } from './controller/data.js';
+import { scrollLeft, scrollRight } from './components/carousel.js';
 
 const registerUsername = document.getElementById('register-username');
 const registerPassword = document.getElementById('register-password');
@@ -14,6 +15,10 @@ const hamburger = document.querySelector('#hamburger');
 const userProfileBtn = document.getElementById('user-profile');
 const createNewRecipe = document.getElementById('create-new-recipe');
 const lastestRecipes = document.getElementById('recently-added');
+const arrowLeftCarousel = document.getElementById('left-arrow');
+const arrowRightCarousel = document.getElementById('right-arrow');
+
+
 
 window.addEventListener('load', checkIfAuth, false);
 registerUsername.addEventListener('blur', validateUsername);
@@ -25,6 +30,10 @@ hamburger.addEventListener('click', activeNavbar);
 userProfileBtn.addEventListener('click', showUserProfile);
 createNewRecipe.addEventListener('click', showCreateNewRecipe);
 lastestRecipes.addEventListener('click', showLastRecipe);
+arrowLeftCarousel.addEventListener('click', scrollLeft);
+arrowRightCarousel.addEventListener('click', scrollRight);
 
 saveRecipe(recipe);
 addRecipe(recipe);
+renderRecipe();
+
