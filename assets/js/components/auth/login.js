@@ -49,7 +49,9 @@ const checkIfAuth = () => {
   if (authUser) {
     document.getElementById('login').classList.add('hide');
     document.getElementById('register').classList.add('hide');
+    document.getElementById('navbar').classList.remove('hide');
     document.getElementById('home').classList.remove('hide');
+    document.body.style.overflowY = 'scroll';
   }
   console.log(authUser);
 }
