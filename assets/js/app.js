@@ -5,6 +5,7 @@ import { activeNavbar, showCreateNewRecipe, showLastRecipe, showUserProfile } fr
 import { recipe } from './data/recipe.js';
 import { addRecipe, renderRecipe, saveRecipe } from './controller/data.js';
 import { scrollLeft, scrollRight } from './components/carousel.js';
+import { addToFavorite } from './components/favorite.js';
 
 const registerUsername = document.getElementById('register-username');
 const registerPassword = document.getElementById('register-password');
@@ -33,7 +34,8 @@ lastestRecipes.addEventListener('click', showLastRecipe);
 arrowLeftCarousel.addEventListener('click', scrollLeft);
 arrowRightCarousel.addEventListener('click', scrollRight);
 
-saveRecipe(recipe);
-addRecipe(recipe);
+// saveRecipe(recipe);
+// addRecipe(recipe);
 renderRecipe();
+addToFavorite();
 
