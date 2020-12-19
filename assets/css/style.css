@@ -2,6 +2,7 @@
 @import './partials/auth.css';
 @import './partials/navbar.css';
 @import './partials/home.css';
+@import './partials/searchResult.css';
 
 :root {
   --white: #fff;

@@ -122,7 +122,7 @@ let recipe = [
     category: "veggie",
     author: "faber",
     date: Date.now(),
-    image: "https://source.unsplash.com/200x200/?food,sushi",
+    image: "https://source.unsplash.com/200x200/?food,pasta",
     category: "international",
   },
   {
@@ -163,7 +163,7 @@ let recipe = [
     category: "meat lover",
   },
   {
-    name: "Bolognese",
+    name: "Pasta",
     ingridients: ["pasta", "tomate", "meat"],
     category: "main",
     author: "faber",
