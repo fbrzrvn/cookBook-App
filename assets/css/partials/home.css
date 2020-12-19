@@ -6,8 +6,7 @@
   border-radius: 10px;
   padding: 0 .25em;
   width: 70vw;
-  margin: auto;
-  margin-bottom: 2em;
+  margin: 3em auto 5em;
 }
 .home__search__form > input {
   border: none;
@@ -26,7 +25,7 @@
   display: flex;
   justify-content: space-between;
   align-items: end;
-  padding: 0 .5em;
+  margin-left: 1em;
 }
 .home__container__body {
   display: flex;
@@ -68,9 +67,9 @@
   flex-wrap: nowrap;
 }
 .home__container__carousel .carousel.no-slide {
-  display: inline-flex;
+  display: flex;
   flex-wrap: wrap;
-  gap: 1em;
+  gap: 1em 0;
 }
 .home__container__carousel .carousel .recipe {
   min-width: 20%;
@@ -101,10 +100,5 @@
   .home__container__body .arrow-left,
   .home__container__body .arrow-right {
     display: none;
-  }
-
-  .card__body {
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1em;
   }
 }

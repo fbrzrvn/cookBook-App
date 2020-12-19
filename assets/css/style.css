@@ -53,7 +53,7 @@ a:hover {
   display: none;
 }
 .wrapper {
-  padding-top: 10vh;
+  padding-top: 8vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
