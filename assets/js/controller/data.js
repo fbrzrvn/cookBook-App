@@ -15,7 +15,14 @@ const renderRecipe = () => {
     div.innerHTML = `
       <a href="#">
         <img src="${el.image}" alt="food">
-      </a>`;
+      </a>
+      <div class="recipe__details">
+        <h3>${el.name}</h3>
+        <button type="button" class="favorite-btn" id="${el.name}">
+          <span class="material-icons">favorite_border</span>
+        </button>
+      </div>`;
+
     switch (el.category) {
       case 'healthy and veggy':
         document.getElementById('healthy').appendChild(div);
