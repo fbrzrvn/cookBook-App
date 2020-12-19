@@ -3,7 +3,7 @@ import { validateUserLogin, checkIfAuth } from './components/auth/login.js';
 import { logout } from './components/auth/logout.js';
 import { activeNavbar, showCreateNewRecipe, showLastRecipe, showUserProfile } from './components/navbar.js';
 import { recipe } from './data/recipe.js';
-import { addRecipe, renderRecipe, saveRecipe } from './controller/data.js';
+import { addRecipe, renderRecipe, saveRecipe, searchRecipe } from './controller/data.js';
 import { scrollLeft, scrollRight } from './components/carousel.js';
 import { addToFavorite } from './components/favorite.js';
 
@@ -18,6 +18,7 @@ const createNewRecipe = document.getElementById('create-new-recipe');
 const lastestRecipes = document.getElementById('recently-added');
 const arrowLeftCarousel = document.getElementById('left-arrow');
 const arrowRightCarousel = document.getElementById('right-arrow');
+const searchInput = document.getElementById('search-input');
 
 
 
@@ -33,6 +34,7 @@ createNewRecipe.addEventListener('click', showCreateNewRecipe);
 lastestRecipes.addEventListener('click', showLastRecipe);
 arrowLeftCarousel.addEventListener('click', scrollLeft);
 arrowRightCarousel.addEventListener('click', scrollRight);
+searchInput.addEventListener('submit', searchRecipe);
 
 // saveRecipe(recipe);
 // addRecipe(recipe);
