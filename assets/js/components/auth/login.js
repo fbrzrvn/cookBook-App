@@ -41,6 +41,8 @@ const validateUserLogin = (e) => {
   }
   sessionStorage.setItem('currentUser', JSON.stringify(validatedUser));
 
+  location.reload();
+
   return validatedUser;
 }
 

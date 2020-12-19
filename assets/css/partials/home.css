@@ -68,9 +68,9 @@
   flex-wrap: nowrap;
 }
 .home__container__carousel .carousel.no-slide {
-  display: inline-flex;
+  display: flex;
   flex-wrap: wrap;
-  gap: 1em;
+  gap: 1em 0;
 }
 .home__container__carousel .carousel .recipe {
   min-width: 20%;
@@ -101,10 +101,5 @@
   .home__container__body .arrow-left,
   .home__container__body .arrow-right {
     display: none;
-  }
-
-  .card__body {
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1em;
   }
 }
