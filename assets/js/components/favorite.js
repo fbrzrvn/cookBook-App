@@ -9,6 +9,7 @@ const changeFavoriteIcon = () => {
         addRecipeToFavorite(e.target.id);
       } else {
         targetEvent.innerHTML = '<span class="material-icons">favorite_border</span>';
+        removeRecipeToFavorite(e.target.id);
       }
     })
   })
@@ -24,6 +25,13 @@ const addRecipeToFavorite = (id) => {
     }
     localStorage.setItem('favoriteRecipes', JSON.stringify(favorites));
   })
+}
+
+const removeRecipeToFavorite = (id) => {
+  let recipes = JSON.parse(localStorage.getItem('favoriteRecipes'));
+  let targetRecipes = recipes.find(recipe => recipe.name === id);
+  console.log(targetRecipes);
+  localStorage.removeItem('targetRecipes');
 }
 
 const renderFavoriteRecipes = (recipe) => {
