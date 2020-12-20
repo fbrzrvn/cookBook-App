@@ -28,6 +28,7 @@ const renderSearchResult = (result) => {
     `
       <div class="wrapper">
         <h2 class="error-msg">Not recipes found with that name 🚫 </h2>
+        <span class="material-icons">cancel</span>
       </div>
     `;
   } else {
@@ -35,6 +36,7 @@ const renderSearchResult = (result) => {
       `
         <div class="home__container__title">
           <h3>Recipes found:</h3>
+          <span id="close-search" class="material-icons close-icon">cancel</span>
         </div>
         <div class="home__container__body">
           <div class="home__container__carousel">

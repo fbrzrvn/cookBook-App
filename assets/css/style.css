@@ -66,3 +66,13 @@ a:hover {
   text-align: center;
   font-size: 2rem;
 }
+.close-icon {
+  font-size: 32px;
+  color: var(--white);
+  opacity: .85;
+  cursor: pointer;
+  transform: opacity 200ms ease-in-out;
+}
+.close-icon:hover {
+  opacity: 1;
+}
