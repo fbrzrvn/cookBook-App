@@ -10,40 +10,39 @@ const saveRecipe = (recipe) => {
 const searchRecipe = (e) => {
   e.preventDefault();
   let recipes = JSON.parse(localStorage.getItem('allRecipe'));
-  let searchInput = document.querySelector('[type="search"]').value;
   let result = [];
-  if (searchInput) {
-    recipes.forEach( recipe => {
-      if (recipe.name.startsWith(searchInput)) {
-        result.push(recipe);
-        searchInput = '';
-        return renderSearchResult(result);
-      } else {
-        document.querySelector('.home__container').innerHTML =
-          `
-            <div class="wrapper">
-              <h2 class="error-msg">Not recipes found with that name 🚫 </h2>
-            </div>
-          `;
-      }
-    })
-  } else {
-    return;
-  }
+  recipes.forEach( recipe => {
+    let searchInput = document.querySelector('[type="search"]').value;
+    if (recipe.name.startsWith(searchInput)) {
+      result.push(recipe);
+    }
+    searchInput = '';
+  })
+  return renderSearchResult(result);
 }
 
 const renderSearchResult = (result) => {
-  document.querySelector('.home__container').innerHTML =
+  console.log(result);
+  if (result.length === 0) {
+    document.querySelector('.home__container').innerHTML =
     `
-      <div class="home__container__title">
-        <h3>Recipes found:</h3>
+      <div class="wrapper">
+        <h2 class="error-msg">Not recipes found with that name 🚫 </h2>
       </div>
-      <div class="home__container__body">
-        <div class="home__container__carousel">
-          <div id="result" class="carousel no-slide"></div>
+    `;
+  } else {
+    document.querySelector('.home__container').innerHTML =
+      `
+        <div class="home__container__title">
+          <h3>Recipes found:</h3>
         </div>
-      </div>
+        <div class="home__container__body">
+          <div class="home__container__carousel">
+            <div id="result" class="carousel no-slide"></div>
+          </div>
+        </div>
       `;
+  }
 
   result.forEach(recipe => {
     let div = document.createElement('div');

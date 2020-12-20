@@ -5,11 +5,11 @@ const changeFavoriteIcon = () => {
       let targetEvent = e.target;
       console.log(e.target.id);
       if (e.target.textContent == 'favorite_border') {
-        targetEvent.innerHTML = '<span class="material-icons">favorite</span>';
         addRecipeToFavorite(e.target.id);
+        targetEvent.innerHTML = '<span class="material-icons">favorite</span>';
       } else {
+        removeRecipeToFavorite(icon);
         targetEvent.innerHTML = '<span class="material-icons">favorite_border</span>';
-        removeRecipeToFavorite(e.target.id);
       }
     })
   })
@@ -17,21 +17,21 @@ const changeFavoriteIcon = () => {
 
 const addRecipeToFavorite = (id) => {
   let recipes = JSON.parse(localStorage.getItem('allRecipe'));
-  let favorites = JSON.parse(localStorage.getItem('favoriteRecipes')) || [];
+  let favorites = JSON.parse(sessionStorage.getItem('favoriteRecipes')) || [];
   recipes.forEach( recipe => {
     if (recipe.name === id) {
       favorites.push(recipe);
       renderFavoriteRecipes(recipe);
     }
-    localStorage.setItem('favoriteRecipes', JSON.stringify(favorites));
+    sessionStorage.setItem('favoriteRecipes', JSON.stringify(favorites));
   })
 }
 
-const removeRecipeToFavorite = (id) => {
-  let recipes = JSON.parse(localStorage.getItem('favoriteRecipes'));
-  let targetRecipes = recipes.find(recipe => recipe.name === id);
-  console.log(targetRecipes);
-  localStorage.removeItem('targetRecipes');
+const removeRecipeToFavorite = (icon) => {
+  let recipes = JSON.parse(sessionStorage.getItem('favoriteRecipes'));
+  let targetId = icon.children[0].id;
+  recipes = recipes.filter(recipe => recipe.name !== targetId);
+  sessionStorage.setItem('favoriteRecipes', JSON.stringify(recipes));
 }
 
 const renderFavoriteRecipes = (recipe) => {

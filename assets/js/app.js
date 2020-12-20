@@ -38,8 +38,8 @@ arrowLeftCarousel.addEventListener('click', scrollLeft);
 arrowRightCarousel.addEventListener('click', scrollRight);
 searchInput.addEventListener('submit', searchRecipe);
 
-saveRecipe(recipe);
-addRecipe(recipe);
+// saveRecipe(recipe);
+// addRecipe(recipe);
 renderRecipe();
 changeFavoriteIcon();
 
