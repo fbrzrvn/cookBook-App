@@ -13,7 +13,7 @@ const validateUserLogin = (e) => {
   if (usersName.includes(loginUsername.value) && usersPassword.includes(loginPassword.value)) {
     document.getElementById('login').classList.add('hide');
     document.getElementById('register').classList.add('hide');
-    document.getElementById('home').classList.remove('hide');
+    // document.getElementById('home').classList.remove('hide');
   } else {
 
     if (!usersPassword.includes(loginPassword.value)) {
@@ -52,7 +52,7 @@ const checkIfAuth = () => {
     document.getElementById('login').classList.add('hide');
     document.getElementById('register').classList.add('hide');
     document.getElementById('navbar').classList.remove('hide');
-    document.getElementById('home').classList.remove('hide');
+    // document.getElementById('home').classList.remove('hide');
     document.body.style.overflowY = 'scroll';
   }
   console.log(authUser);

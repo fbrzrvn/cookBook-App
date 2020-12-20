@@ -3,6 +3,7 @@
 @import './partials/navbar.css';
 @import './partials/home.css';
 @import './partials/searchResult.css';
+@import './partials/favorite.css';
 
 :root {
   --white: #fff;
@@ -58,9 +59,20 @@ a:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 2em;
 }
 .error-msg {
   font-family: 'Montserrat', sans-serif;
   text-align: center;
   font-size: 2rem;
+}
+.close-icon {
+  font-size: 32px;
+  color: var(--white);
+  opacity: .85;
+  cursor: pointer;
+  transform: opacity 200ms ease-in-out;
+}
+.close-icon:hover {
+  opacity: 1;
 }

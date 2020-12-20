@@ -10,36 +10,41 @@ const saveRecipe = (recipe) => {
 const searchRecipe = (e) => {
   e.preventDefault();
   let recipes = JSON.parse(localStorage.getItem('allRecipe'));
-  let searchInput = document.querySelector('[type="search"]').value;
   let result = [];
   recipes.forEach( recipe => {
-    if (recipe.name.startsWith(searchInput) && !result.includes(recipe.name)) {
+    let searchInput = document.querySelector('[type="search"]').value;
+    if (recipe.name.startsWith(searchInput)) {
       result.push(recipe);
-      searchInput = '';
-      return renderSearchResult(result);
-    } else {
-      document.querySelector('.home__container').innerHTML =
-        `
-          <div class="wrapper">
-            <h2 class="error-msg">Not recipes found with that name 🚫 </h2>
-          </div>
-        `;
     }
+    searchInput = '';
   })
+  return renderSearchResult(result);
 }
 
 const renderSearchResult = (result) => {
-  document.querySelector('.home__container').innerHTML =
+  console.log(result);
+  if (result.length === 0) {
+    document.querySelector('.home__container').innerHTML =
     `
-      <div class="home__container__title">
-        <h3>Recipes found:</h3>
+      <div class="wrapper">
+        <h2 class="error-msg">Not recipes found with that name 🚫 </h2>
+        <span class="material-icons">cancel</span>
       </div>
-      <div class="home__container__body">
-        <div class="home__container__carousel">
-          <div id="result" class="carousel no-slide"></div>
+    `;
+  } else {
+    document.querySelector('.home__container').innerHTML =
+      `
+        <div class="home__container__title">
+          <h3>Recipes found:</h3>
+          <span id="close-search" class="material-icons close-icon">cancel</span>
         </div>
-      </div>
+        <div class="home__container__body">
+          <div class="home__container__carousel">
+            <div id="result" class="carousel no-slide"></div>
+          </div>
+        </div>
       `;
+  }
 
   result.forEach(recipe => {
     let div = document.createElement('div');
@@ -51,7 +56,7 @@ const renderSearchResult = (result) => {
         </a>
         <div class="result__details">
           <h2>${recipe.name}</h2>
-          <button type="button" class="favorite-btn" id="${recipe.name}">
+          <button type="button" class="favorite-btn">
             <span class="material-icons">favorite_border</span>
           </button>
         </div>
@@ -72,8 +77,8 @@ const renderRecipe = () => {
         </a>
         <div class="recipe__details">
           <h3>${el.name}</h3>
-          <button type="button" class="favorite-btn" id="${el.name}">
-            <span class="material-icons">favorite_border</span>
+          <button type="button" class="favorite-btn" >
+            <span id="${el.name}" class="material-icons">favorite_border</span>
           </button>
         </div>
       `;

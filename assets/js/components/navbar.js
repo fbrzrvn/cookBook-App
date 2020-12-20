@@ -5,25 +5,32 @@ const activeNavbar = () => {
   hamburger.classList.toggle('close');
 }
 
+const showHome = () => {
+  document.getElementById('home').classList.remove('hide');
+  document.getElementById('user').classList.add('hide');
+  document.getElementById('new-recipe').classList.add('hide');
+  // document.getElementById('last-recipe').classList.add('hide');
+}
+
 const showUserProfile = () => {
   document.getElementById('home').classList.add('hide');
   document.getElementById('user').classList.remove('hide');
   document.getElementById('new-recipe').classList.add('hide');
-  document.getElementById('last-recipe').classList.add('hide');
+  // document.getElementById('last-recipe').classList.add('hide');
 }
 
 const showCreateNewRecipe = () => {
   document.getElementById('home').classList.add('hide');
   document.getElementById('user').classList.add('hide');
   document.getElementById('new-recipe').classList.remove('hide');
-  document.getElementById('last-recipe').classList.add('hide');
+  // document.getElementById('last-recipe').classList.add('hide');
 }
 
-const showLastRecipe = () => {
-  document.getElementById('home').classList.add('hide');
-  document.getElementById('user').classList.add('hide');
-  document.getElementById('new-recipe').classList.add('hide');
-  document.getElementById('last-recipe').classList.remove('hide');
-}
+// const showLastRecipe = () => {
+//   document.getElementById('home').classList.add('hide');
+//   document.getElementById('user').classList.add('hide');
+//   document.getElementById('new-recipe').classList.add('hide');
+//   document.getElementById('last-recipe').classList.remove('hide');
+// }
 
-export { activeNavbar, showUserProfile, showCreateNewRecipe, showLastRecipe };
+export { activeNavbar, showUserProfile, showCreateNewRecipe, showHome };

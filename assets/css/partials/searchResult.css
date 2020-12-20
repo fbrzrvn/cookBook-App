@@ -1,10 +1,18 @@
 .home__container__carousel {
   display: flex;
   width: 100%;
+  padding: 2em 0;
+}
+.home__container__carousel .carousel.no-slide {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em 0;
 }
 .home__container__carousel .carousel .result {
-  display: flex;
-  flex-flow: column wrap;
+  min-width: 20%;
+  box-shadow: 5px 10px 10px rgba(0,0,0,.3);
+  transition: all 300ms ease-in-out;
+  position: relative;
 }
 .home__container__carousel .carousel .result img {
   width: 98%;
@@ -18,6 +26,9 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 .5em;
+}
+.home__container__carousel .carousel .result .result__details h2 {
+  text-transform: capitalize;
 }
 .home__container__carousel .carousel .result .result__details button {
   border: none;
