@@ -1,6 +1,6 @@
 let recipe = [
   {
-    name: "Bolognese",
+    name: "bolognese",
     ingridients: ["pasta", "tomate", "meat"],
     category: "main",
     author: "faber",
@@ -10,7 +10,7 @@ let recipe = [
     favorite: false,
   },
   {
-    name: "Humus",
+    name: "empanadas",
     ingridients: ["sesamo", "lemon", "oil", "cumino", "salt", "paprika", "tahina", "garbanzos"],
     category: "veggie",
     author: "faber",
@@ -20,7 +20,7 @@ let recipe = [
     favorite: false,
   },
   {
-    name: "Pure",
+    name: "ratatouille",
     ingridients: ["potato", "milk", "butter", "macis", "salt"],
     category: "veggie",
     author: "faber",
@@ -30,7 +30,7 @@ let recipe = [
     favorite: false,
   },
   {
-    name: "Pure",
+    name: "veggie chilli",
     ingridients: ["potato", "milk", "butter", "macis", "salt"],
     category: "veggie",
     author: "faber",
@@ -40,7 +40,7 @@ let recipe = [
     favorite: false,
   },
   {
-    name: "Pure",
+    name: "parmigiana",
     ingridients: ["potato", "milk", "butter", "macis", "salt"],
     category: "veggie",
     author: "faber",
@@ -50,7 +50,7 @@ let recipe = [
     favorite: false,
   },
   {
-    name: "Pure",
+    name: "rosted parsnips",
     ingridients: ["potato", "milk", "butter", "macis", "salt"],
     category: "veggie",
     author: "faber",
@@ -60,7 +60,7 @@ let recipe = [
     favorite: false,
   },
   {
-    name: "Pure",
+    name: "veggie korma",
     ingridients: ["potato", "milk", "butter", "macis", "salt"],
     category: "veggie",
     author: "faber",
@@ -70,7 +70,7 @@ let recipe = [
     favorite: false,
   },
   {
-    name: "Pure",
+    name: "glazed carrots",
     ingridients: ["potato", "milk", "butter", "macis", "salt"],
     category: "veggie",
     author: "faber",
@@ -80,7 +80,7 @@ let recipe = [
     favorite: false,
   },
   {
-    name: "Humus",
+    name: "roasted black beans burger",
     ingridients: ["sesamo", "lemon", "oil", "cumino", "salt", "paprika", "tahina", "garbanzos"],
     category: "veggie",
     author: "faber",
@@ -90,7 +90,7 @@ let recipe = [
     favorite: false,
   },
   {
-    name: "Humus",
+    name: "warm grape & radicchio salad",
     ingridients: ["sesamo", "lemon", "oil", "cumino", "salt", "paprika", "tahina", "garbanzos"],
     category: "veggie",
     author: "faber",
@@ -100,7 +100,7 @@ let recipe = [
     favorite: false,
   },
   {
-    name: "Humus",
+    name: "veggie pad thai",
     ingridients: ["sesamo", "lemon", "oil", "cumino", "salt", "paprika", "tahina", "garbanzos"],
     category: "veggie",
     author: "faber",
@@ -110,7 +110,7 @@ let recipe = [
     favorite: false,
   },
   {
-    name: "Humus",
+    name: "roasted tomato risotto",
     ingridients: ["sesamo", "lemon", "oil", "cumino", "salt", "paprika", "tahina", "garbanzos"],
     category: "veggie",
     author: "faber",
@@ -120,7 +120,7 @@ let recipe = [
     favorite: false,
   },
   {
-    name: "Humus",
+    name: "pea and ricotta stuffed courgettes",
     ingridients: ["sesamo", "lemon", "oil", "cumino", "salt", "paprika", "tahina", "garbanzos"],
     category: "veggie",
     author: "faber",
@@ -130,7 +130,7 @@ let recipe = [
     favorite: false,
   },
   {
-    name: "Humus",
+    name: "asparagus quiche & soup",
     ingridients: ["sesamo", "lemon", "oil", "cumino", "salt", "paprika", "tahina", "garbanzos"],
     category: "veggie",
     author: "faber",
@@ -140,7 +140,7 @@ let recipe = [
     favorite: false,
   },
   {
-    name: "Humus",
+    name: "sticky onion tart",
     ingridients: ["sesamo", "lemon", "oil", "cumino", "salt", "paprika", "tahina", "garbanzos"],
     category: "veggie",
     author: "faber",
@@ -151,7 +151,7 @@ let recipe = [
   },
 
   {
-    name: "Bolognese",
+    name: "bolognese",
     ingridients: ["pasta", "tomate", "meat"],
     category: "main",
     author: "faber",
@@ -161,7 +161,7 @@ let recipe = [
     favorite: false,
   },
   {
-    name: "Bolognese",
+    name: "lamb ribs",
     ingridients: ["pasta", "tomate", "meat"],
     category: "main",
     author: "faber",
@@ -171,7 +171,7 @@ let recipe = [
     favorite: false,
   },
   {
-    name: "Bolognese",
+    name: "grilled pork",
     ingridients: ["pasta", "tomate", "meat"],
     category: "main",
     author: "faber",
@@ -181,7 +181,7 @@ let recipe = [
     favorite: false,
   },
   {
-    name: "Pasta",
+    name: "chicken breast",
     ingridients: ["pasta", "tomate", "meat"],
     category: "main",
     author: "faber",
@@ -191,7 +191,7 @@ let recipe = [
     favorite: false,
   },
   {
-    name: "Humus",
+    name: "pasta with salmon",
     ingridients: ["sesamo", "lemon", "oil", "cumino", "salt", "paprika", "tahina", "garbanzos"],
     category: "veggie",
     author: "faber",
@@ -201,7 +201,7 @@ let recipe = [
     favorite: false,
   },
   {
-    name: "Humus",
+    name: "tiramisu",
     ingridients: ["sesamo", "lemon", "oil", "cumino", "salt", "paprika", "tahina", "garbanzos"],
     category: "veggie",
     author: "faber",
@@ -211,17 +211,17 @@ let recipe = [
     favorite: false,
   },
   {
-    name: "Humus",
+    name: "scrumble eggs",
     ingridients: ["sesamo", "lemon", "oil", "cumino", "salt", "paprika", "tahina", "garbanzos"],
     category: "veggie",
     author: "faber",
     date: Date.now(),
-    image: "https://source.unsplash.com/200x200/?food,egs",
+    image: "https://source.unsplash.com/200x200/?food,eggs",
     category: "popular",
     favorite: false,
   },
   {
-    name: "Humus",
+    name: "macedonia",
     ingridients: ["sesamo", "lemon", "oil", "cumino", "salt", "paprika", "tahina", "garbanzos"],
     category: "veggie",
     author: "faber",
@@ -231,7 +231,7 @@ let recipe = [
     favorite: false,
   },
   {
-    name: "Humus",
+    name: "cesar salad",
     ingridients: ["sesamo", "lemon", "oil", "cumino", "salt", "paprika", "tahina", "garbanzos"],
     category: "veggie",
     author: "faber",
@@ -241,7 +241,7 @@ let recipe = [
     favorite: false,
   },
   {
-    name: "Humus",
+    name: "red tuna",
     ingridients: ["sesamo", "lemon", "oil", "cumino", "salt", "paprika", "tahina", "garbanzos"],
     category: "veggie",
     author: "faber",
@@ -251,7 +251,7 @@ let recipe = [
     favorite: false,
   },
   {
-    name: "Humus",
+    name: "kebab",
     ingridients: ["sesamo", "lemon", "oil", "cumino", "salt", "paprika", "tahina", "garbanzos"],
     category: "veggie",
     author: "faber",
@@ -261,7 +261,7 @@ let recipe = [
     favorite: false,
   },
   {
-    name: "Humus",
+    name: "sacher cake",
     ingridients: ["sesamo", "lemon", "oil", "cumino", "salt", "paprika", "tahina", "garbanzos"],
     category: "veggie",
     author: "faber",
@@ -271,7 +271,7 @@ let recipe = [
     favorite: false,
   },
   {
-    name: "Humus",
+    name: "ice-cream chocolate",
     ingridients: ["sesamo", "lemon", "oil", "cumino", "salt", "paprika", "tahina", "garbanzos"],
     category: "veggie",
     author: "faber",
@@ -281,7 +281,7 @@ let recipe = [
     favorite: false,
   },
   {
-    name: "Humus",
+    name: "humus",
     ingridients: ["sesamo", "lemon", "oil", "cumino", "salt", "paprika", "tahina", "garbanzos"],
     category: "veggie",
     author: "faber",
@@ -291,7 +291,7 @@ let recipe = [
     favorite: false,
   },
   {
-    name: "Humus",
+    name: "french toast",
     ingridients: ["sesamo", "lemon", "oil", "cumino", "salt", "paprika", "tahina", "garbanzos"],
     category: "veggie",
     author: "faber",
@@ -301,7 +301,7 @@ let recipe = [
     favorite: false,
   },
   {
-    name: "Humus",
+    name: "hamburger",
     ingridients: ["sesamo", "lemon", "oil", "cumino", "salt", "paprika", "tahina", "garbanzos"],
     category: "veggie",
     author: "faber",
@@ -311,7 +311,7 @@ let recipe = [
     favorite: false,
   },
   {
-    name: "Humus",
+    name: "pesto",
     ingridients: ["sesamo", "lemon", "oil", "cumino", "salt", "paprika", "tahina", "garbanzos"],
     category: "veggie",
     author: "faber",
@@ -321,7 +321,7 @@ let recipe = [
     favorite: false,
   },
   {
-    name: "Humus",
+    name: "roastbeef",
     ingridients: ["sesamo", "lemon", "oil", "cumino", "salt", "paprika", "tahina", "garbanzos"],
     category: "veggie",
     author: "faber",
@@ -331,7 +331,7 @@ let recipe = [
     favorite: false,
   },
   {
-    name: "Humus",
+    name: "lasagna",
     ingridients: ["sesamo", "lemon", "oil", "cumino", "salt", "paprika", "tahina", "garbanzos"],
     category: "veggie",
     author: "faber",
