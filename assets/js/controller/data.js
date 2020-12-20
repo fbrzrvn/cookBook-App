@@ -55,7 +55,7 @@ const renderSearchResult = (result) => {
         </a>
         <div class="result__details">
           <h2>${recipe.name}</h2>
-          <button type="button" class="favorite-btn" id="${recipe.name}">
+          <button type="button" class="favorite-btn">
             <span class="material-icons">favorite_border</span>
           </button>
         </div>
@@ -76,8 +76,8 @@ const renderRecipe = () => {
         </a>
         <div class="recipe__details">
           <h3>${el.name}</h3>
-          <button type="button" class="favorite-btn" id="${el.name}">
-            <span class="material-icons">favorite_border</span>
+          <button type="button" class="favorite-btn" >
+            <span id="${el.name}" class="material-icons">favorite_border</span>
           </button>
         </div>
       `;

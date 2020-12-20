@@ -15,14 +15,14 @@ const logoutBtn = document.getElementById('logout-btn');
 const hamburger = document.querySelector('#hamburger');
 const userProfileBtn = document.getElementById('user-profile');
 const createNewRecipe = document.getElementById('create-new-recipe');
-const lastestRecipes = document.getElementById('recently-added');
+// const lastestRecipes = document.getElementById('recently-added');
 const arrowLeftCarousel = document.getElementById('left-arrow');
 const arrowRightCarousel = document.getElementById('right-arrow');
 const searchInput = document.getElementById('search-input');
 
 
 
-window.addEventListener('load', checkIfAuth, false);
+window.addEventListener('DOMContentLoaded', checkIfAuth, false);
 registerUsername.addEventListener('blur', validateUsername);
 registerPassword.addEventListener('blur', validatePassword);
 registerBtn.addEventListener('click', saveUser);
@@ -31,7 +31,7 @@ logoutBtn.addEventListener('click', logout);
 hamburger.addEventListener('click', activeNavbar);
 userProfileBtn.addEventListener('click', showUserProfile);
 createNewRecipe.addEventListener('click', showCreateNewRecipe);
-lastestRecipes.addEventListener('click', showLastRecipe);
+// lastestRecipes.addEventListener('click', showLastRecipe);
 arrowLeftCarousel.addEventListener('click', scrollLeft);
 arrowRightCarousel.addEventListener('click', scrollRight);
 searchInput.addEventListener('submit', searchRecipe);

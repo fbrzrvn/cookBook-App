@@ -3,6 +3,7 @@
 @import './partials/navbar.css';
 @import './partials/home.css';
 @import './partials/searchResult.css';
+@import './partials/favorite.css';
 
 :root {
   --white: #fff;
@@ -58,6 +59,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 2em;
 }
 .error-msg {
   font-family: 'Montserrat', sans-serif;
