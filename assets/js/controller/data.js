@@ -12,20 +12,24 @@ const searchRecipe = (e) => {
   let recipes = JSON.parse(localStorage.getItem('allRecipe'));
   let searchInput = document.querySelector('[type="search"]').value;
   let result = [];
-  recipes.forEach( recipe => {
-    if (recipe.name.startsWith(searchInput) && !result.includes(recipe.name)) {
-      result.push(recipe);
-      searchInput = '';
-      return renderSearchResult(result);
-    } else {
-      document.querySelector('.home__container').innerHTML =
-        `
-          <div class="wrapper">
-            <h2 class="error-msg">Not recipes found with that name 🚫 </h2>
-          </div>
-        `;
-    }
-  })
+  if (searchInput) {
+    recipes.forEach( recipe => {
+      if (recipe.name.startsWith(searchInput)) {
+        result.push(recipe);
+        searchInput = '';
+        return renderSearchResult(result);
+      } else {
+        document.querySelector('.home__container').innerHTML =
+          `
+            <div class="wrapper">
+              <h2 class="error-msg">Not recipes found with that name 🚫 </h2>
+            </div>
+          `;
+      }
+    })
+  } else {
+    return;
+  }
 }
 
 const renderSearchResult = (result) => {

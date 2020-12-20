@@ -100,6 +100,9 @@
   display: none;
   transition: all 500ms ease-in-out;
 }
+.home__container__carousel .carousel .recipe .recipe__details h3 {
+  text-transform: capitalize;
+}
 .home__container__carousel .carousel .recipe .recipe__details button {
   border: none;
   background: transparent;
