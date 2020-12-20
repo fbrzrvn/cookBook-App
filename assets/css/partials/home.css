@@ -80,10 +80,11 @@
 .home__container__carousel .carousel .recipe img {
   width: 98%;
   vertical-align: top;
+  opacity: .85;
   transition: transform 500ms ease-in-out;
 }
 .home__container__carousel .carousel .recipe img:hover {
-  opacity: .85;
+  opacity: 1;
 }
 .home__container__carousel .carousel .recipe .recipe__details {
   position: absolute;
@@ -102,7 +103,7 @@
 .home__container__carousel .carousel .recipe .recipe__details button {
   border: none;
   background: transparent;
-  color: var(--white);
+  color: red;
   display: flex;
   justify-content: flex-end;
 }

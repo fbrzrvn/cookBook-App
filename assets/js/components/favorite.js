@@ -1,4 +1,4 @@
-const addToFavorite = () => {
+const changeFavoriteIcon = () => {
   const favoriteIcon = document.querySelectorAll('.favorite-btn');
   favoriteIcon.forEach(icon => {
     icon.addEventListener('click', e => {
@@ -12,4 +12,4 @@ const addToFavorite = () => {
   })
 }
 
-export { addToFavorite };
+export { changeFavoriteIcon };

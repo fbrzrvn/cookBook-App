@@ -7,6 +7,7 @@ let recipe = [
     date: Date.now(),
     image: "https://source.unsplash.com/200x200/?food,pasta",
     category: "meat lover",
+    favorite: false,
   },
   {
     name: "Humus",
@@ -16,6 +17,7 @@ let recipe = [
     date: Date.now(),
     image: "https://source.unsplash.com/200x200/?food,international",
     category: "international",
+    favorite: false,
   },
   {
     name: "Pure",
@@ -25,6 +27,7 @@ let recipe = [
     date: Date.now(),
     image: "https://source.unsplash.com/200x200/?food,vegan",
     category: "healthy and veggy",
+    favorite: false,
   },
   {
     name: "Pure",
@@ -34,6 +37,7 @@ let recipe = [
     date: Date.now(),
     image: "https://source.unsplash.com/200x200/?food,healthy",
     category: "healthy and veggy",
+    favorite: false,
   },
   {
     name: "Pure",
@@ -43,6 +47,7 @@ let recipe = [
     date: Date.now(),
     image: "https://source.unsplash.com/200x200/?food,vegetarian",
     category: "healthy and veggy",
+    favorite: false,
   },
   {
     name: "Pure",
@@ -52,6 +57,7 @@ let recipe = [
     date: Date.now(),
     image: "https://source.unsplash.com/200x200/?food,vegan",
     category: "healthy and veggy",
+    favorite: false,
   },
   {
     name: "Pure",
@@ -61,6 +67,7 @@ let recipe = [
     date: Date.now(),
     image: "https://source.unsplash.com/200x200/?food,healthy",
     category: "healthy and veggy",
+    favorite: false,
   },
   {
     name: "Pure",
@@ -70,6 +77,7 @@ let recipe = [
     date: Date.now(),
     image: "https://source.unsplash.com/200x200/?food,healthy",
     category: "healthy and veggy",
+    favorite: false,
   },
   {
     name: "Humus",
@@ -79,6 +87,7 @@ let recipe = [
     date: Date.now(),
     image: "https://source.unsplash.com/200x200/?food",
     category: "popular",
+    favorite: false,
   },
   {
     name: "Humus",
@@ -88,6 +97,7 @@ let recipe = [
     date: Date.now(),
     image: "https://source.unsplash.com/200x200/?food,salad",
     category: "popular",
+    favorite: false,
   },
   {
     name: "Humus",
@@ -97,6 +107,7 @@ let recipe = [
     date: Date.now(),
     image: "https://source.unsplash.com/200x200/?food,humus",
     category: "popular",
+    favorite: false,
   },
   {
     name: "Humus",
@@ -106,6 +117,7 @@ let recipe = [
     date: Date.now(),
     image: "https://source.unsplash.com/200x200/?food,rice",
     category: "popular",
+    favorite: false,
   },
   {
     name: "Humus",
@@ -115,6 +127,7 @@ let recipe = [
     date: Date.now(),
     image: "https://source.unsplash.com/200x200/?food,fish",
     category: "international",
+    favorite: false,
   },
   {
     name: "Humus",
@@ -124,6 +137,7 @@ let recipe = [
     date: Date.now(),
     image: "https://source.unsplash.com/200x200/?food,pasta",
     category: "international",
+    favorite: false,
   },
   {
     name: "Humus",
@@ -133,6 +147,7 @@ let recipe = [
     date: Date.now(),
     image: "https://source.unsplash.com/200x200/?food,ramen",
     category: "international",
+    favorite: false,
   },
 
   {
@@ -143,6 +158,7 @@ let recipe = [
     date: Date.now(),
     image: "https://source.unsplash.com/200x200/?food,beef",
     category: "meat lover",
+    favorite: false,
   },
   {
     name: "Bolognese",
@@ -152,6 +168,7 @@ let recipe = [
     date: Date.now(),
     image: "https://source.unsplash.com/200x200/?food,lamb",
     category: "meat lover",
+    favorite: false,
   },
   {
     name: "Bolognese",
@@ -161,6 +178,7 @@ let recipe = [
     date: Date.now(),
     image: "https://source.unsplash.com/200x200/?food,pork",
     category: "meat lover",
+    favorite: false,
   },
   {
     name: "Pasta",
@@ -170,6 +188,7 @@ let recipe = [
     date: Date.now(),
     image: "https://source.unsplash.com/200x200/?food,chicken",
     category: "meat lover",
+    favorite: false,
   },
   {
     name: "Humus",
@@ -179,6 +198,7 @@ let recipe = [
     date: Date.now(),
     image: "https://source.unsplash.com/200x200/?food,pasta",
     category: "popular",
+    favorite: false,
   },
   {
     name: "Humus",
@@ -188,6 +208,7 @@ let recipe = [
     date: Date.now(),
     image: "https://source.unsplash.com/200x200/?food,dessert",
     category: "popular",
+    favorite: false,
   },
   {
     name: "Humus",
@@ -197,6 +218,7 @@ let recipe = [
     date: Date.now(),
     image: "https://source.unsplash.com/200x200/?food,egs",
     category: "popular",
+    favorite: false,
   },
   {
     name: "Humus",
@@ -206,6 +228,7 @@ let recipe = [
     date: Date.now(),
     image: "https://source.unsplash.com/200x200/?food,fruit",
     category: "popular",
+    favorite: false,
   },
   {
     name: "Humus",
@@ -215,6 +238,7 @@ let recipe = [
     date: Date.now(),
     image: "https://source.unsplash.com/200x200/?food,salad",
     category: "popular",
+    favorite: false,
   },
   {
     name: "Humus",
@@ -224,6 +248,7 @@ let recipe = [
     date: Date.now(),
     image: "https://source.unsplash.com/200x200/?food,fish",
     category: "popular",
+    favorite: false,
   },
   {
     name: "Humus",
@@ -233,6 +258,7 @@ let recipe = [
     date: Date.now(),
     image: "https://source.unsplash.com/200x200/?food,kebab",
     category: "popular",
+    favorite: false,
   },
   {
     name: "Humus",
@@ -242,6 +268,7 @@ let recipe = [
     date: Date.now(),
     image: "https://source.unsplash.com/200x200/?food,cake",
     category: "popular",
+    favorite: false,
   },
   {
     name: "Humus",
@@ -251,6 +278,7 @@ let recipe = [
     date: Date.now(),
     image: "https://source.unsplash.com/200x200/?food,ice-cream",
     category: "popular",
+    favorite: false,
   },
   {
     name: "Humus",
@@ -260,6 +288,7 @@ let recipe = [
     date: Date.now(),
     image: "https://source.unsplash.com/200x200/?food",
     category: "popular",
+    favorite: false,
   },
   {
     name: "Humus",
@@ -269,6 +298,7 @@ let recipe = [
     date: Date.now(),
     image: "https://source.unsplash.com/200x200?food",
     category: "popular",
+    favorite: false,
   },
   {
     name: "Humus",
@@ -278,6 +308,7 @@ let recipe = [
     date: Date.now(),
     image: "https://source.unsplash.com/200x200/?food,hamburger",
     category: "popular",
+    favorite: false,
   },
   {
     name: "Humus",
@@ -287,6 +318,7 @@ let recipe = [
     date: Date.now(),
     image: "https://source.unsplash.com/200x200/?food",
     category: "popular",
+    favorite: false,
   },
   {
     name: "Humus",
@@ -296,6 +328,7 @@ let recipe = [
     date: Date.now(),
     image: "https://source.unsplash.com/200x200/?food,french",
     category: "international",
+    favorite: false,
   },
   {
     name: "Humus",
@@ -305,6 +338,7 @@ let recipe = [
     date: Date.now(),
     image: "https://source.unsplash.com/200x200/?food,pasta",
     category: "international",
+    favorite: false,
   },
 ]
 

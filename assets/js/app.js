@@ -5,7 +5,7 @@ import { activeNavbar, showCreateNewRecipe, showLastRecipe, showUserProfile } fr
 import { recipe } from './data/recipe.js';
 import { addRecipe, renderRecipe, saveRecipe, searchRecipe } from './controller/data.js';
 import { scrollLeft, scrollRight } from './components/carousel.js';
-import { addToFavorite } from './components/favorite.js';
+import { changeFavoriteIcon } from './components/favorite.js';
 
 const registerUsername = document.getElementById('register-username');
 const registerPassword = document.getElementById('register-password');
@@ -39,5 +39,5 @@ searchInput.addEventListener('submit', searchRecipe);
 // saveRecipe(recipe);
 // addRecipe(recipe);
 renderRecipe();
-addToFavorite();
+changeFavoriteIcon();
 

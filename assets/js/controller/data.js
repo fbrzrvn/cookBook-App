@@ -11,17 +11,21 @@ const searchRecipe = (e) => {
   e.preventDefault();
   let recipes = JSON.parse(localStorage.getItem('allRecipe'));
   let searchInput = document.querySelector('[type="search"]').value;
-  let allNames = recipes.map( el => el.name);
   let result = [];
-  allNames.forEach( name => {
-    if (name.startsWith(searchInput)) {
-      if (!result.includes(name)) {
-        result.push(name);
-      }
+  recipes.forEach( recipe => {
+    if (recipe.name.startsWith(searchInput) && !result.includes(recipe.name)) {
+      result.push(recipe);
+      searchInput = '';
+      return renderSearchResult(result);
+    } else {
+      document.querySelector('.home__container').innerHTML =
+        `
+          <div class="wrapper">
+            <h2 class="error-msg">Not recipes found with that name 🚫 </h2>
+          </div>
+        `;
     }
   })
-  searchInput = '';
-  return renderSearchResult(result);
 }
 
 const renderSearchResult = (result) => {
@@ -30,27 +34,29 @@ const renderSearchResult = (result) => {
       <div class="home__container__title">
         <h3>Recipes found:</h3>
       </div>
-      <div class="home__container__carousel">
-        <div id="result" class="carousel no-slide"></div>
+      <div class="home__container__body">
+        <div class="home__container__carousel">
+          <div id="result" class="carousel no-slide"></div>
+        </div>
       </div>
       `;
 
   result.forEach(recipe => {
     let div = document.createElement('div');
-    div.className = 'result__recipe';
+    div.className = 'result';
     div.innerHTML =
       `
         <a href="#">
-          <img src="https://source.unsplash.com/200x200/?food,spanish" alt="food">
+          <img src="${recipe.image}" alt="food">
         </a>
-        <div class="result__recipe__details">
-          <h2>${recipe}</h2>
-          <button type="button" class="favorite-btn" id="${recipe}">
+        <div class="result__details">
+          <h2>${recipe.name}</h2>
+          <button type="button" class="favorite-btn" id="${recipe.name}">
             <span class="material-icons">favorite_border</span>
           </button>
         </div>
       `;
-    document.querySelector('.home__container__carousel').appendChild(div);
+    document.querySelector('.carousel.no-slide').appendChild(div);
   })
 }
 
