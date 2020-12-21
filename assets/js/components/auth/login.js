@@ -39,6 +39,7 @@ const validateUserLogin = (e) => {
     name: loginUsername.value,
     password: loginPassword.value
   }
+
   sessionStorage.setItem('currentUser', JSON.stringify(validatedUser));
 
   location.reload();
@@ -46,16 +47,20 @@ const validateUserLogin = (e) => {
   return validatedUser;
 }
 
+
 const checkIfAuth = () => {
   const authUser = JSON.parse(sessionStorage.getItem('currentUser'));
+
   if (authUser) {
     document.getElementById('login').classList.add('hide');
     document.getElementById('register').classList.add('hide');
     document.getElementById('navbar').classList.remove('hide');
-    // document.getElementById('home').classList.remove('hide');
     document.body.style.overflowY = 'scroll';
   }
+
   console.log(authUser);
 }
+
+
 
 export { validateUserLogin, checkIfAuth };
