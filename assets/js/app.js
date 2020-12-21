@@ -3,7 +3,7 @@ import { validateUserLogin, checkIfAuth } from './components/auth/login.js';
 import { logout } from './components/auth/logout.js';
 import { activeNavbar, showCreateNewRecipe, showHome, showUserProfile } from './components/navbar.js';
 import { recipe } from './data/recipe.js';
-import { addRecipe, renderRecipe, renderRecipeDetails, saveRecipe, searchRecipe } from './controller/data.js';
+import { addRecipe, addNewRecipe, renderRecipe, renderRecipeDetails, saveRecipe, searchRecipe } from './controller/data.js';
 import { scrollLeft, scrollRight } from './components/carousel.js';
 import { changeFavoriteIcon } from './components/favorite.js';
 
@@ -19,6 +19,7 @@ const createNewRecipe = document.getElementById('create-new-recipe');
 const arrowLeftCarousel = document.getElementById('left-arrow');
 const arrowRightCarousel = document.getElementById('right-arrow');
 const searchInput = document.getElementById('search-input');
+const newRecipeBtn = document.getElementById('new-recipe-btn');
 const recipes = document.querySelectorAll('.home__container__carousel .carousel');
 
 
@@ -36,6 +37,7 @@ createNewRecipe.addEventListener('click', showCreateNewRecipe);
 arrowLeftCarousel.addEventListener('click', scrollLeft);
 arrowRightCarousel.addEventListener('click', scrollRight);
 searchInput.addEventListener('submit', searchRecipe);
+newRecipeBtn.addEventListener('click', addNewRecipe);
 recipes.forEach(recipe => {
   recipe.addEventListener('click', renderRecipeDetails);
 })

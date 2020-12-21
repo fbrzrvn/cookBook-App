@@ -113,24 +113,26 @@ const renderRecipeDetails = (e) => {
       console.log(recipe);
       card.innerHTML =
       `
-        <img src="${recipe.image}" alt="${recipe.name}">
-        <div class="recipe__card__title">
-          <h2>${recipe.name}</h2>
-          <button type="button" class="favorite-btn">
-            <span class="material-icons">favorite_border</span>
-          </button>
+        <div class="recipe__card__body">
+          <img src="${recipe.image}" alt="${recipe.name}">
+          <div class="recipe__card__title">
+            <h2>${recipe.name}</h2>
+            <button type="button" class="favorite-btn">
+              <span class="material-icons">favorite_border</span>
+            </button>
+          </div>
+          <div class="recipe__card__details">
+            <div class="recipe__card__details__ingridients">
+              <h4>Ingridients</h4>
+                <p>${recipe.ingridients}</p>
+            </div>
+            <div class="recipe__card__details__description">
+              <h4>Description</h4>
+              <p>${recipe.description}</p>
+            </div>
+          </div>
         </div>
-        <div class="recipe__card__details">
-          <div class="recipe__card__details__ingridients">
-            <h4>Ingridients</h4>
-            <p>${recipe.ingridients}</p>
-          </div>
-          <div class="recipe__card__details__description">
-            <h4>Description</h4>
-            <p>${recipe.description}</p>
-          </div>
-          </div>
-          <span id="close-details" class="material-icons close-icon">cancel</span>
+        <span id="close-details" class="material-icons close-icon">cancel</span>
       `;
     }
   })
@@ -144,4 +146,26 @@ const closeRecipeDetails = () => {
   card.classList.add('hide');
 }
 
-export { addRecipe, saveRecipe, searchRecipe, renderRecipe, renderRecipeDetails };
+const addNewRecipe = e => {
+  const recipeName = document.getElementById('name');
+  const recipeCategory = document.getElementById('category');
+  const recipeIngridients = document.getElementById('ingridients');
+  const recipeDescription = document.getElementById('description');
+  const recipeAuthor = document.getElementById('author');
+  const recipeImage = document.getElementById('image');
+
+  let addedRecipe = {
+    name: recipeName.value,
+    category: recipeCategory.value,
+    ingridients: recipeIngridients.value,
+    description: recipeDescription.value,
+    author: recipeAuthor.value,
+    image: recipeImage.value,
+  }
+
+  e.preventDefault();
+
+  console.log(addedRecipe);
+}
+
+export { addRecipe, saveRecipe, searchRecipe, renderRecipe, renderRecipeDetails, addNewRecipe };

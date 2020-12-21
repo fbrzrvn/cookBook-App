@@ -145,7 +145,24 @@
   <!-- Create NEW recipe -->
   <section id="new-recipe" class="hide">
     <div class="wrapper new-recipe">
-      <h1>Create a new recipe</h1>
+      <h1>Add a Recipe</h1>
+      <div class="form">
+        <form>
+          <label for="name">Recipe's Name</label>
+          <input type="text" id="name" placeholder="Name">
+          <label for="category">Recipe's Category</label>
+          <input type="text" id="category" placeholder="Category">
+          <label for="ingridients">Recipe's Ingridients</label>
+          <input type="text" id="ingridients" placeholder="Ingridients">
+          <label for="description">Recipe's Description</label>
+          <textarea id="description" cols="30" rows="10"></textarea>
+          <label for="author">Recipe's Author</label>
+          <input type="text" id="author" placeholder="Author">
+          <label for="image">Load a Image</label>
+          <input type="file" id="image">
+          <button type="submit" id="new-recipe-btn" class="auth__btn">Create</button>
+        </form>
+      </div>
     </div>
   </section>
 </body>
