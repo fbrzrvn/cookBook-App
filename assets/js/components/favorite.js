@@ -50,18 +50,28 @@ const renderFavoriteRecipes = (recipe) => {
   div.className = 'favorite__recipes';
   div.innerHTML =
     `
-      <a href="#">
-        <img src="${recipe.image}" alt="food">
-      </a>
-      <div class="favorite__recipes__details">
-        <p>${recipe.name}</p>
-        <button type="button" class="favorite-btn">
-          <span id="${recipe.name}" class="material-icons">favorite</span>
-        </button>
+      <div class="favorite__recipe__card">
+        <img src="${recipe.image}" alt="${recipe.name}">
+        <div class="favorite__recipe__card__title">
+          <h2>${recipe.name}</h2>
+          <button type="button" class="favorite-btn">
+            <span class="material-icons">favorite</span>
+          </button>
+        </div>
+        <div class="favorite__recipe__card__body">
+          <div class="favorite__recipe__card__body-ingridients">
+            <h4>Ingridients</h4>
+              <p>${recipe.ingridients}</p>
+          </div>
+          <div class="favorite__recipe__card__body-description">
+            <h4>Description</h4>
+            <p>${recipe.description}</p>
+          </div>
+        </div>
       </div>
     `;
 
-  document.querySelector('.favorite__carousel').appendChild(div);
+  document.querySelector('.favorite').appendChild(div);
 }
 
 
