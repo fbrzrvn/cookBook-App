@@ -52,4 +52,4 @@ const renderFavoriteRecipes = (recipe) => {
   document.querySelector('.favorite__carousel').appendChild(div);
 }
 
-export { changeFavoriteIcon };
+export { changeFavoriteIcon, renderFavoriteRecipes };

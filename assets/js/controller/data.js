@@ -1,3 +1,6 @@
+import { renderFavoriteRecipes } from '../components/favorite.js';
+
+
 const addRecipe = (recipe) => {
   return localStorage.setItem('allRecipe', JSON.stringify(recipe));
 }
@@ -110,7 +113,6 @@ const renderRecipeDetails = (e) => {
   let card = document.querySelector('.recipe__card');
   recipes.forEach(recipe => {
     if (recipe.name === e.path[2].id || recipe.name === e.path[1].id) {
-      console.log(recipe);
       card.innerHTML =
       `
         <div class="recipe__card__body">
@@ -165,7 +167,12 @@ const addNewRecipe = e => {
 
   e.preventDefault();
 
-  console.log(addedRecipe);
+  let recipes = JSON.parse(localStorage.getItem('allRecipe'));
+  recipes.push(addedRecipe);
+  localStorage.setItem('allRecipe', JSON.stringify(recipes));
+
+  renderRecipe();
+  renderFavoriteRecipes(addedRecipe);
 }
 
 export { addRecipe, saveRecipe, searchRecipe, renderRecipe, renderRecipeDetails, addNewRecipe };
