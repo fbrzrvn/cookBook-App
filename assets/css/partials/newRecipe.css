@@ -1,0 +1,20 @@
+.form form {
+  display: flex;
+  flex-direction: column;
+}
+.form form label {
+  margin-bottom: .5em;
+}
+.form form input {
+  width: 100%;
+  margin-bottom: 1em;
+  height: 40px;
+  border: 1px solid var(--black);
+  border-radius: 10px;
+  padding-left: .5em;
+}
+.form textarea {
+  border: 1px solid var(--black);
+  border-radius: 10px;
+  margin-bottom: 1em;
+}
