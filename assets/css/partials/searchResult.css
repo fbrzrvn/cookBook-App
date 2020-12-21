@@ -1,36 +1,23 @@
-.home__container__carousel {
-  display: flex;
-  width: 100%;
-  padding: 2em 0;
-}
-.home__container__carousel .carousel.no-slide {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1em 0;
-}
 .home__container__carousel .carousel .result {
-  min-width: 20%;
   box-shadow: 5px 10px 10px rgba(0,0,0,.3);
   transition: all 300ms ease-in-out;
-  position: relative;
+  padding: 1em;
 }
-.home__container__carousel .carousel .result img {
-  width: 98%;
+.home__container__carousel .carousel.no-slide .result img {
   opacity: .85;
 }
-.home__container__carousel .carousel .result img:hover {
+.home__container__carousel .carousel.no-slide .result img:hover {
   opacity: 1;
 }
-.home__container__carousel .carousel .result .result__details {
+.home__container__carousel .carousel.no-slide .result .result__details {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 .5em;
 }
-.home__container__carousel .carousel .result .result__details h2 {
+.home__container__carousel .carousel.no-slide .result .result__details h4 {
   text-transform: capitalize;
 }
-.home__container__carousel .carousel .result .result__details button {
+.home__container__carousel .carousel.no-slide .result .result__details button {
   border: none;
   background: transparent;
   color: red;

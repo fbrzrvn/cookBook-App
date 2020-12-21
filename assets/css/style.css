@@ -59,12 +59,14 @@ a:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin: 2em;
 }
 .error-msg {
   font-family: 'Montserrat', sans-serif;
   text-align: center;
   font-size: 2rem;
+  margin-bottom: 1em;
 }
 .close-icon {
   font-size: 32px;

@@ -28,7 +28,9 @@ const renderSearchResult = (result) => {
     `
       <div class="wrapper">
         <h2 class="error-msg">Not recipes found with that name 🚫 </h2>
-        <span class="material-icons">cancel</span>
+        <a href="/">
+          <span id="close-search" class="material-icons close-icon">cancel</span>
+        </a>
       </div>
     `;
   } else {
@@ -36,7 +38,9 @@ const renderSearchResult = (result) => {
       `
         <div class="home__container__title">
           <h3>Recipes found:</h3>
-          <span id="close-search" class="material-icons close-icon">cancel</span>
+          <a href="/">
+            <span id="close-search" class="material-icons close-icon">cancel</span>
+          </a>
         </div>
         <div class="home__container__body">
           <div class="home__container__carousel">
@@ -55,7 +59,7 @@ const renderSearchResult = (result) => {
           <img src="${recipe.image}" alt="food">
         </a>
         <div class="result__details">
-          <h2>${recipe.name}</h2>
+          <h4>${recipe.name}</h4>
           <button type="button" class="favorite-btn">
             <span class="material-icons">favorite_border</span>
           </button>
