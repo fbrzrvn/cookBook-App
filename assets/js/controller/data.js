@@ -74,6 +74,7 @@ const renderRecipe = () => {
   recipes.forEach( el => {
     let div = document.createElement('div');
     div.className = 'recipe';
+    div.id = el.name;
     div.innerHTML =
       `
         <a href="#">
@@ -104,5 +105,43 @@ const renderRecipe = () => {
   })
 }
 
+const renderRecipeDetails = (e) => {
+  let recipes = JSON.parse(localStorage.getItem('allRecipe'));
+  let card = document.querySelector('.recipe__card');
+  recipes.forEach(recipe => {
+    if (recipe.name === e.path[2].id || recipe.name === e.path[1].id) {
+      console.log(recipe);
+      card.innerHTML =
+      `
+        <img src="${recipe.image}" alt="${recipe.name}">
+        <div class="recipe__card__title">
+          <h2>${recipe.name}</h2>
+          <button type="button" class="favorite-btn">
+            <span class="material-icons">favorite_border</span>
+          </button>
+        </div>
+        <div class="recipe__card__details">
+          <div class="recipe__card__details__ingridients">
+            <h4>Ingridients</h4>
+            <p>${recipe.ingridients}</p>
+          </div>
+          <div class="recipe__card__details__description">
+            <h4>Description</h4>
+            <p>${recipe.description}</p>
+          </div>
+          </div>
+          <span id="close-details" class="material-icons close-icon">cancel</span>
+      `;
+    }
+  })
+   card.classList.remove('hide');
+   const closeDetailsIcon = document.getElementById('close-details');
+   closeDetailsIcon.addEventListener('click', closeRecipeDetails);
+}
 
-export { addRecipe, saveRecipe, searchRecipe, renderRecipe };
+const closeRecipeDetails = () => {
+  let card = document.querySelector('.recipe__card');
+  card.classList.add('hide');
+}
+
+export { addRecipe, saveRecipe, searchRecipe, renderRecipe, renderRecipeDetails };

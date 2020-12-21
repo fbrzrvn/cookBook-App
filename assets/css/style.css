@@ -4,6 +4,7 @@
 @import './partials/home.css';
 @import './partials/searchResult.css';
 @import './partials/favorite.css';
+@import './partials/recipes.css';
 
 :root {
   --white: #fff;

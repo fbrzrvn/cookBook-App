@@ -3,7 +3,7 @@ import { validateUserLogin, checkIfAuth } from './components/auth/login.js';
 import { logout } from './components/auth/logout.js';
 import { activeNavbar, showCreateNewRecipe, showHome, showUserProfile } from './components/navbar.js';
 import { recipe } from './data/recipe.js';
-import { addRecipe, renderRecipe, saveRecipe, searchRecipe } from './controller/data.js';
+import { addRecipe, renderRecipe, renderRecipeDetails, saveRecipe, searchRecipe } from './controller/data.js';
 import { scrollLeft, scrollRight } from './components/carousel.js';
 import { changeFavoriteIcon } from './components/favorite.js';
 
@@ -16,10 +16,10 @@ const hamburger = document.querySelector('#hamburger');
 const homeBtn = document.getElementById('home-btn');
 const userProfileBtn = document.getElementById('user-profile');
 const createNewRecipe = document.getElementById('create-new-recipe');
-// const lastestRecipes = document.getElementById('recently-added');
 const arrowLeftCarousel = document.getElementById('left-arrow');
 const arrowRightCarousel = document.getElementById('right-arrow');
 const searchInput = document.getElementById('search-input');
+const recipes = document.querySelectorAll('.home__container__carousel .carousel');
 
 
 
@@ -33,13 +33,16 @@ hamburger.addEventListener('click', activeNavbar);
 homeBtn.addEventListener('click', showHome);
 userProfileBtn.addEventListener('click', showUserProfile);
 createNewRecipe.addEventListener('click', showCreateNewRecipe);
-// lastestRecipes.addEventListener('click', showLastRecipe);
 arrowLeftCarousel.addEventListener('click', scrollLeft);
 arrowRightCarousel.addEventListener('click', scrollRight);
 searchInput.addEventListener('submit', searchRecipe);
+recipes.forEach(recipe => {
+  recipe.addEventListener('click', renderRecipeDetails);
+})
 
-// saveRecipe(recipe);
-// addRecipe(recipe);
+
+
+saveRecipe(recipe);
+addRecipe(recipe);
 renderRecipe();
 changeFavoriteIcon();
-
