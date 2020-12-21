@@ -76,6 +76,7 @@
   box-shadow: 5px 10px 10px rgba(0,0,0,.3);
   transition: all 300ms ease-in-out;
   position: relative;
+  cursor: pointer;
 }
 .home__container__carousel .carousel.no-slide .recipe {
   min-width: auto;
