@@ -14,7 +14,7 @@ let recipe = [
     description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam hic, nesciunt eaque nisi sit ab molestias quaerat ad saepe dicta?",
     category: "healthy and veggy",
     author: "faber",
-    image: "https://source.unsplash.com/200x200/?food,international",
+    image: "https://source.unsplash.com/200x200/?food,fruits",
     favorite: false,
   },
   {
@@ -131,7 +131,7 @@ let recipe = [
     description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam hic, nesciunt eaque nisi sit ab molestias quaerat ad saepe dicta?",
     category: "international",
     author: "faber",
-    image: "https://source.unsplash.com/200x200/?food,ramen",
+    image: "https://source.unsplash.com/200x200/?food,beef",
     favorite: false,
   },
 

@@ -3,9 +3,9 @@ import { validateUserLogin, checkIfAuth } from './components/auth/login.js';
 import { logout } from './components/auth/logout.js';
 import { activeNavbar, showCreateNewRecipe, showHome, showUserProfile } from './components/navbar.js';
 import { recipe } from './data/recipe.js';
-import { addRecipe, addNewRecipe, renderRecipe, renderRecipeDetails, saveRecipe, searchRecipe } from './controller/data.js';
+import { addNewRecipe, renderRecipe, renderRecipeDetails, saveRecipe, searchRecipe } from './controller/data.js';
 import { scrollLeft, scrollRight } from './components/carousel.js';
-import { changeFavoriteIcon } from './components/favorite.js';
+import { changeFavoriteIcon, renderAddedFavoriteRecipe } from './components/favorite.js';
 
 
 const registerUsername = document.getElementById('register-username');
@@ -45,7 +45,9 @@ recipes.forEach(recipe => {
 
 
 
-// saveRecipe(recipe);
-// addRecipe(recipe);
+saveRecipe(recipe);
 renderRecipe();
 changeFavoriteIcon();
+
+let favoriteRecipes = JSON.parse(sessionStorage.getItem('favoriteRecipes'));
+favoriteRecipes.forEach(recipe => renderAddedFavoriteRecipe(recipe));

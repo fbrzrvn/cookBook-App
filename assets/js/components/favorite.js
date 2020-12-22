@@ -24,7 +24,11 @@ const addFavoriteToStorage = element => {
 
   let foundRecipe = recipes.find(recipe => recipe.name === element.target.id);
 
-  foundRecipe.favorite = true;
+  let index = recipes.indexOf(foundRecipe);
+  if (index !== -1) {
+    recipes[index].favorite = true;
+    console.log(recipes[index]);
+  }
 
   if (favorites.includes(foundRecipe)) {
     return;
@@ -49,6 +53,9 @@ const addFavoriteToStorage = element => {
 
 
 const renderAddedFavoriteRecipe = (recipe) => {
+
+  if (!recipe) return;
+
   let div = document.createElement('div');
   div.className = 'favorite__recipes';
   div.id = recipe.name,
