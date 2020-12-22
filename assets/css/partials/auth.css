@@ -18,6 +18,7 @@
   margin-bottom: .5em;
 }
 .auth__form > input {
+  font-family: 'Montserrat', sans-serif;
   margin-bottom: 1em;
   height: 40px;
   border: 1px solid var(--black);

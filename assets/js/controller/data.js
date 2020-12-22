@@ -1,29 +1,41 @@
+import { renderFavoriteRecipes } from '../components/favorite.js';
+
+
 const addRecipe = (recipe) => {
   return localStorage.setItem('allRecipe', JSON.stringify(recipe));
 }
+
 
 const saveRecipe = (recipe) => {
   let recipesList = JSON.parse(localStorage.getItem('allRecipe')) || [];
   recipesList.push(recipe);
 }
 
+
 const searchRecipe = (e) => {
   e.preventDefault();
   let recipes = JSON.parse(localStorage.getItem('allRecipe'));
   let result = [];
+
   recipes.forEach( recipe => {
+
     let searchInput = document.querySelector('[type="search"]').value;
+
     if (recipe.name.startsWith(searchInput)) {
       result.push(recipe);
     }
+
     searchInput = '';
   })
+
   return renderSearchResult(result);
 }
 
+
 const renderSearchResult = (result) => {
-  console.log(result);
+
   if (result.length === 0) {
+
     document.querySelector('.home__container').innerHTML =
     `
       <div class="wrapper">
@@ -33,7 +45,9 @@ const renderSearchResult = (result) => {
         </a>
       </div>
     `;
+
   } else {
+
     document.querySelector('.home__container').innerHTML =
       `
         <div class="home__container__title">
@@ -51,6 +65,7 @@ const renderSearchResult = (result) => {
   }
 
   result.forEach(recipe => {
+
     let div = document.createElement('div');
     div.className = 'result';
     div.innerHTML =
@@ -65,13 +80,17 @@ const renderSearchResult = (result) => {
           </button>
         </div>
       `;
+
     document.querySelector('.carousel.no-slide').appendChild(div);
   })
 }
 
+
 const renderRecipe = () => {
   let recipes = JSON.parse(localStorage.getItem('allRecipe'));
+
   recipes.forEach( el => {
+
     let div = document.createElement('div');
     div.className = 'recipe';
     div.id = el.name;
@@ -105,12 +124,17 @@ const renderRecipe = () => {
   })
 }
 
+
 const renderRecipeDetails = (e) => {
   let recipes = JSON.parse(localStorage.getItem('allRecipe'));
   let card = document.querySelector('.recipe__card');
+
+  if (e.path[0].className === 'material-icons') {
+    return
+  }
+
   recipes.forEach(recipe => {
     if (recipe.name === e.path[2].id || recipe.name === e.path[1].id) {
-      console.log(recipe);
       card.innerHTML =
       `
         <div class="recipe__card__body">
@@ -136,15 +160,19 @@ const renderRecipeDetails = (e) => {
       `;
     }
   })
-   card.classList.remove('hide');
-   const closeDetailsIcon = document.getElementById('close-details');
-   closeDetailsIcon.addEventListener('click', closeRecipeDetails);
+
+  card.classList.remove('hide');
+
+  const closeDetailsIcon = document.getElementById('close-details');
+  closeDetailsIcon.addEventListener('click', closeRecipeDetails);
 }
+
 
 const closeRecipeDetails = () => {
   let card = document.querySelector('.recipe__card');
   card.classList.add('hide');
 }
+
 
 const addNewRecipe = e => {
   const recipeName = document.getElementById('name');
@@ -165,7 +193,15 @@ const addNewRecipe = e => {
 
   e.preventDefault();
 
-  console.log(addedRecipe);
+  let recipesFroStorage = JSON.parse(localStorage.getItem('allRecipe'));
+  let recipes = [...recipesFroStorage];
+
+  recipes.push(addedRecipe);
+
+  localStorage.setItem('allRecipe', JSON.stringify(recipes));
+
+  renderRecipe();
+  renderFavoriteRecipes(addedRecipe);
 }
 
 export { addRecipe, saveRecipe, searchRecipe, renderRecipe, renderRecipeDetails, addNewRecipe };

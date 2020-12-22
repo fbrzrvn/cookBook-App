@@ -28,6 +28,7 @@ const saveUser = e => {
   return;
 }
 
+
 const validateUsername = () => {
   let usersList = JSON.parse(localStorage.getItem('users')) || [];
   let allUsername = usersList.map(el => el.name);
@@ -43,6 +44,7 @@ const validateUsername = () => {
   }
 }
 
+
 const validatePassword = () => {
   if (!registerPassword.value) {
     errorPassword.classList.remove('hide');
@@ -54,5 +56,7 @@ const validatePassword = () => {
     return true;
   }
 }
+
+
 
 export { saveUser, validateUsername, validatePassword };
