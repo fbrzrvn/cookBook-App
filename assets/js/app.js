@@ -45,7 +45,7 @@ recipes.forEach(recipe => {
 
 
 
-saveRecipe(recipe);
+// saveRecipe(recipe);
 renderRecipe();
 changeFavoriteIcon();
 

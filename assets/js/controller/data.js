@@ -90,22 +90,41 @@ const renderRecipe = () => {
   let recipes = JSON.parse(localStorage.getItem('allRecipe'));
 
   recipes.forEach( el => {
-
     let div = document.createElement('div');
     div.className = 'recipe';
     div.id = el.name;
-    div.innerHTML =
-    `
-      <a href="#">
-        <img src="${el.image}" alt="food">
-      </a>
-      <div class="recipe__details">
-        <h3>${el.name}</h3>
-        <button type="button" class="favorite-btn" >
-          <span id="${el.name}" class="material-icons">favorite_border</span>
-        </button>
-      </div>
-    `;
+
+    if (el.favorite === true) {
+
+      div.innerHTML =
+      `
+        <a href="#">
+          <img src="${el.image}" alt="food">
+        </a>
+        <div class="recipe__details">
+          <h3>${el.name}</h3>
+          <button type="button" class="favorite-btn" >
+            <span id="${el.name}" class="material-icons">favorite</span>
+          </button>
+        </div>
+      `;
+
+    } else {
+
+      div.innerHTML =
+      `
+        <a href="#">
+          <img src="${el.image}" alt="food">
+        </a>
+        <div class="recipe__details">
+          <h3>${el.name}</h3>
+          <button type="button" class="favorite-btn" >
+            <span id="${el.name}" class="material-icons">favorite_border</span>
+          </button>
+        </div>
+      `;
+    }
+
 
     switch (el.category) {
       case 'healthy and veggy':

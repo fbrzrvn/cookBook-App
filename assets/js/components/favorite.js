@@ -28,7 +28,10 @@ const addFavoriteToStorage = element => {
   if (index !== -1) {
     recipes[index].favorite = true;
     console.log(recipes[index]);
+    console.log(recipes);
   }
+
+  localStorage.setItem('allRecipe', JSON.stringify(recipes));
 
   if (favorites.includes(foundRecipe)) {
     return;
