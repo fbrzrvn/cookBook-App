@@ -13,7 +13,20 @@ const validateUserLogin = (e) => {
   if (usersName.includes(loginUsername.value) && usersPassword.includes(loginPassword.value)) {
     document.getElementById('login').classList.add('hide');
     document.getElementById('register').classList.add('hide');
-    // document.getElementById('home').classList.remove('hide');
+
+    let validatedUser = JSON.parse(sessionStorage.getItem('currentUser')) || {};
+
+    validatedUser = {
+      name: loginUsername.value,
+      password: loginPassword.value
+    }
+
+    sessionStorage.setItem('currentUser', JSON.stringify(validatedUser));
+
+    location.reload();
+
+    return validatedUser;
+
   } else {
 
     if (!usersPassword.includes(loginPassword.value)) {
@@ -32,19 +45,6 @@ const validateUserLogin = (e) => {
       errorLoginUsername.classList.add('hide');
     }
   }
-
-  let validatedUser = JSON.parse(sessionStorage.getItem('currentUser')) || {};
-
-  validatedUser = {
-    name: loginUsername.value,
-    password: loginPassword.value
-  }
-
-  sessionStorage.setItem('currentUser', JSON.stringify(validatedUser));
-
-  location.reload();
-
-  return validatedUser;
 }
 
 
