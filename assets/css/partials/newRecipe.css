@@ -1,6 +1,8 @@
 .form form {
   display: flex;
   flex-direction: column;
+  width: 250px;
+  max-width: 320px;
 }
 .form form label {
   margin-bottom: .5em;

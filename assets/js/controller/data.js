@@ -189,7 +189,7 @@ const addNewRecipe = e => {
     description: recipeDescription.value,
     author: recipeAuthor.value,
     image: recipeImage.value,
-  }
+  };
 
   e.preventDefault();
 
@@ -199,6 +199,13 @@ const addNewRecipe = e => {
   recipes.push(addedRecipe);
 
   localStorage.setItem('allRecipe', JSON.stringify(recipes));
+
+  recipeName.value = '';
+  recipeCategory.value = '';
+  recipeIngridients.value = '';
+  recipeDescription.value = '';
+  recipeAuthor.value = '';
+  recipeImage.value = '';
 
   renderRecipe();
   renderFavoriteRecipes(addedRecipe);
