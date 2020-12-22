@@ -1,4 +1,4 @@
-import { renderFavoriteRecipes } from '../components/favorite.js';
+import { changeFavoriteIcon, renderAddedFavoriteRecipe } from '../components/favorite.js';
 
 
 const addRecipe = (recipe) => {
@@ -68,6 +68,7 @@ const renderSearchResult = (result) => {
 
     let div = document.createElement('div');
     div.className = 'result';
+    div.id = recipe.name;
     div.innerHTML =
       `
         <a href="#">
@@ -82,6 +83,8 @@ const renderSearchResult = (result) => {
       `;
 
     document.querySelector('.carousel.no-slide').appendChild(div);
+
+    changeFavoriteIcon();
   })
 }
 
@@ -95,17 +98,17 @@ const renderRecipe = () => {
     div.className = 'recipe';
     div.id = el.name;
     div.innerHTML =
-      `
-        <a href="#">
-          <img src="${el.image}" alt="food">
-        </a>
-        <div class="recipe__details">
-          <h3>${el.name}</h3>
-          <button type="button" class="favorite-btn" >
-            <span id="${el.name}" class="material-icons">favorite_border</span>
-          </button>
-        </div>
-      `;
+    `
+      <a href="#">
+        <img src="${el.image}" alt="food">
+      </a>
+      <div class="recipe__details">
+        <h3>${el.name}</h3>
+        <button type="button" class="favorite-btn" >
+          <span id="${el.name}" class="material-icons">favorite_border</span>
+        </button>
+      </div>
+    `;
 
     switch (el.category) {
       case 'healthy and veggy':
@@ -159,6 +162,7 @@ const renderRecipeDetails = (e) => {
         <span id="close-details" class="material-icons close-icon">cancel</span>
       `;
     }
+    changeFavoriteIcon();
   })
 
   card.classList.remove('hide');
@@ -208,7 +212,8 @@ const addNewRecipe = e => {
   recipeImage.value = '';
 
   renderRecipe();
-  renderFavoriteRecipes(addedRecipe);
+  renderAddedFavoriteRecipe(addedRecipe);
+
 }
 
 export { addRecipe, saveRecipe, searchRecipe, renderRecipe, renderRecipeDetails, addNewRecipe };

@@ -7,47 +7,51 @@ const changeFavoriteIcon = () => {
       let targetEvent = e.target;
 
       if (e.target.textContent == 'favorite_border') {
-        addRecipeToFavorite(e.target.id);
         targetEvent.innerHTML = '<span class="material-icons">favorite</span>';
+        addFavoriteToStorage(e);
       } else {
-        removeRecipeToFavorite(icon);
         targetEvent.innerHTML = '<span class="material-icons">favorite_border</span>';
+        // removeRecipeToFavorite(icon);
       }
     })
   })
 }
 
 
-const addRecipeToFavorite = (id) => {
+const addFavoriteToStorage = element => {
   let recipes = JSON.parse(localStorage.getItem('allRecipe'));
   let favorites = JSON.parse(sessionStorage.getItem('favoriteRecipes')) || [];
 
-  recipes.forEach( recipe => {
+  let foundRecipe = recipes.find(recipe => recipe.name === element.target.id);
 
-    if (recipe.name === id) {
-      favorites.push(recipe);
-      renderFavoriteRecipes(recipe);
-    }
+  foundRecipe.favorite = true;
 
+  if (favorites.includes(foundRecipe)) {
+    return;
+  } else {
+    favorites.push(foundRecipe);
     sessionStorage.setItem('favoriteRecipes', JSON.stringify(favorites));
-  })
+
+    renderAddedFavoriteRecipe(foundRecipe);
+  }
 }
 
 
-const removeRecipeToFavorite = (icon) => {
-  let recipes = JSON.parse(sessionStorage.getItem('favoriteRecipes'));
-  let targetId = icon.children[0].id;
+// const removeRecipeToFavorite = (icon) => {
+//   let favoriteRecipes = JSON.parse(sessionStorage.getItem('favoriteRecipes'));
+//   let targetId = icon.children[0].id;
 
-  recipes = recipes.filter(recipe => recipe.name !== targetId);
+//   let targetElement = favoriteRecipes.filter(recipe => recipe.name === targetId);
+//   targetElement.forEach(recipe => recipe.favorite = false);
 
-  sessionStorage.setItem('favoriteRecipes', JSON.stringify(recipes));
-}
+//   console.log(favoriteRecipes);
+// }
 
 
-const renderFavoriteRecipes = (recipe) => {
-
+const renderAddedFavoriteRecipe = (recipe) => {
   let div = document.createElement('div');
   div.className = 'favorite__recipes';
+  div.id = recipe.name,
   div.innerHTML =
     `
       <div class="favorite__recipe__card">
@@ -72,8 +76,9 @@ const renderFavoriteRecipes = (recipe) => {
     `;
 
   document.querySelector('.favorite').appendChild(div);
+
 }
 
 
 
-export { changeFavoriteIcon, renderFavoriteRecipes };
+export { changeFavoriteIcon, renderAddedFavoriteRecipe };

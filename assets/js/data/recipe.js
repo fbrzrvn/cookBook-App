@@ -104,7 +104,7 @@ let recipe = [
     description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam hic, nesciunt eaque nisi sit ab molestias quaerat ad saepe dicta?",
     category: "popular",
     author: "faber",
-    image: "https://source.unsplash.com/200x200/?food,rice",
+    image: "https://source.unsplash.com/200x200/?food",
     favorite: false,
   },
   {
