@@ -8,7 +8,6 @@ import { scrollLeft, scrollRight } from './components/carousel.js';
 import { changeFavoriteIcon } from './components/favorite.js';
 
 
-
 const registerUsername = document.getElementById('register-username');
 const registerPassword = document.getElementById('register-password');
 const registerBtn = document.getElementById('register-btn');
