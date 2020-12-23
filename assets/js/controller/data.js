@@ -66,7 +66,10 @@ const renderSearchResult = (result) => {
     let div = document.createElement('div');
     div.className = 'result';
     div.id = recipe.name;
-    div.innerHTML =
+
+    if (recipe.favorite === true) {
+
+      div.innerHTML =
       `
         <a href="#">
           <img src="${recipe.image}" alt="food">
@@ -74,10 +77,26 @@ const renderSearchResult = (result) => {
         <div class="result__details">
           <h4>${recipe.name}</h4>
           <button type="button" class="favorite-btn">
-            <span class="material-icons">favorite_border</span>
+            <span class="material-icons">favorite</span>
           </button>
         </div>
       `;
+
+    } else {
+
+      div.innerHTML =
+        `
+          <a href="#">
+            <img src="${recipe.image}" alt="food">
+          </a>
+          <div class="result__details">
+            <h4>${recipe.name}</h4>
+            <button type="button" class="favorite-btn">
+              <span class="material-icons">favorite_border</span>
+            </button>
+          </div>
+        `;
+    }
 
     document.querySelector('.carousel.no-slide').appendChild(div);
 
@@ -153,29 +172,59 @@ const renderRecipeDetails = (e) => {
 
   recipes.forEach(recipe => {
     if (recipe.name === e.path[2].id || recipe.name === e.path[1].id) {
-      card.innerHTML =
-      `
-        <div class="recipe__card__body">
-          <img src="${recipe.image}" alt="${recipe.name}">
-          <div class="recipe__card__title">
-            <h2>${recipe.name}</h2>
-            <button type="button" class="favorite-btn">
-              <span class="material-icons">favorite_border</span>
-            </button>
-          </div>
-          <div class="recipe__card__details">
-            <div class="recipe__card__details__ingridients">
-              <h4>Ingridients</h4>
-                <p>${recipe.ingridients}</p>
+
+      if (recipe.favorite === true) {
+
+        card.innerHTML =
+        `
+          <div class="recipe__card__body">
+            <img src="${recipe.image}" alt="${recipe.name}">
+            <div class="recipe__card__title">
+              <h2>${recipe.name}</h2>
+              <button type="button" class="favorite-btn">
+                <span class="material-icons">favorite</span>
+              </button>
             </div>
-            <div class="recipe__card__details__description">
-              <h4>Description</h4>
-              <p>${recipe.description}</p>
+            <div class="recipe__card__details">
+              <div class="recipe__card__details__ingridients">
+                <h4>Ingridients</h4>
+                  <p>${recipe.ingridients}</p>
+              </div>
+              <div class="recipe__card__details__description">
+                <h4>Description</h4>
+                <p>${recipe.description}</p>
+              </div>
             </div>
           </div>
-        </div>
-        <span id="close-details" class="material-icons close-icon">cancel</span>
-      `;
+          <span id="close-details" class="material-icons close-icon">cancel</span>
+        `;
+
+      } else {
+
+        card.innerHTML =
+        `
+          <div class="recipe__card__body">
+            <img src="${recipe.image}" alt="${recipe.name}">
+            <div class="recipe__card__title">
+              <h2>${recipe.name}</h2>
+              <button type="button" class="favorite-btn">
+                <span class="material-icons">favorite_border</span>
+              </button>
+            </div>
+            <div class="recipe__card__details">
+              <div class="recipe__card__details__ingridients">
+                <h4>Ingridients</h4>
+                  <p>${recipe.ingridients}</p>
+              </div>
+              <div class="recipe__card__details__description">
+                <h4>Description</h4>
+                <p>${recipe.description}</p>
+              </div>
+            </div>
+          </div>
+          <span id="close-details" class="material-icons close-icon">cancel</span>
+        `;
+      }
     }
   })
 
