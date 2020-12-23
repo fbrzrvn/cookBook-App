@@ -1,6 +1,6 @@
 # cookBook-App
 
-A modern cookBook app to store, share or consulting recipes.
+A modern cookBook app to store, share or consulting recipes. 
 Provide a user authentication, a form to create new recipe, a possibility to add/remove recipe to favorite and a search for recipe's name.
 
 ## Getting Started
