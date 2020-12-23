@@ -8,6 +8,7 @@ import { scrollLeft, scrollRight } from './components/carousel.js';
 import { changeFavoriteIcon, renderAddedFavoriteRecipe } from './components/favorite.js';
 
 
+
 const registerUsername = document.getElementById('register-username');
 const registerPassword = document.getElementById('register-password');
 const registerBtn = document.getElementById('register-btn');
@@ -25,7 +26,17 @@ const recipes = document.querySelectorAll('.home__container__carousel .carousel'
 
 
 
-window.addEventListener('DOMContentLoaded', checkIfAuth, false);
+window.addEventListener('DOMContentLoaded', () => {
+  checkIfAuth();
+  // saveRecipe(recipe);
+  renderRecipe();
+  changeFavoriteIcon();
+
+  let favoriteRecipes = JSON.parse(sessionStorage.getItem('favoriteRecipes'));
+  favoriteRecipes.forEach(recipe => renderAddedFavoriteRecipe(recipe));
+
+}, false);
+
 registerUsername.addEventListener('blur', validateUsername);
 registerPassword.addEventListener('blur', validatePassword);
 registerBtn.addEventListener('click', saveUser);
@@ -45,9 +56,4 @@ recipes.forEach(recipe => {
 
 
 
-// saveRecipe(recipe);
-renderRecipe();
-changeFavoriteIcon();
 
-let favoriteRecipes = JSON.parse(sessionStorage.getItem('favoriteRecipes'));
-favoriteRecipes.forEach(recipe => renderAddedFavoriteRecipe(recipe));

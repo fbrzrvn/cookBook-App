@@ -1,4 +1,4 @@
-import { changeFavoriteIcon, renderAddedFavoriteRecipe } from '../components/favorite.js';
+import { renderAddedFavoriteRecipe } from '../components/favorite.js';
 
 
 
@@ -81,7 +81,6 @@ const renderSearchResult = (result) => {
 
     document.querySelector('.carousel.no-slide').appendChild(div);
 
-    changeFavoriteIcon();
   })
 }
 
@@ -149,7 +148,7 @@ const renderRecipeDetails = (e) => {
   let card = document.querySelector('.recipe__card');
 
   if (e.path[0].className === 'material-icons') {
-    return
+    return;
   }
 
   recipes.forEach(recipe => {
@@ -178,7 +177,6 @@ const renderRecipeDetails = (e) => {
         <span id="close-details" class="material-icons close-icon">cancel</span>
       `;
     }
-    changeFavoriteIcon();
   })
 
   card.classList.remove('hide');
@@ -209,6 +207,7 @@ const addNewRecipe = e => {
     description: recipeDescription.value,
     author: recipeAuthor.value,
     image: recipeImage.value,
+    favorite: true,
   };
 
   e.preventDefault();
