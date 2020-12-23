@@ -32,10 +32,12 @@ window.addEventListener('DOMContentLoaded', () => {
   renderRecipe();
   changeFavoriteIcon();
 
-  let favoriteRecipes = JSON.parse(sessionStorage.getItem('favoriteRecipes'));
-  favoriteRecipes.forEach(recipe => renderAddedFavoriteRecipe(recipe));
-
+  let favoriteRecipes = JSON.parse(localStorage.getItem('allRecipe'));
+  favoriteRecipes.forEach(recipe => {
+    if (recipe.favorite === true) renderAddedFavoriteRecipe(recipe);
+  })
 }, false);
+
 
 registerUsername.addEventListener('blur', validateUsername);
 registerPassword.addEventListener('blur', validatePassword);

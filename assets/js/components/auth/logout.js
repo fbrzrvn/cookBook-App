@@ -1,4 +1,4 @@
-const logout = (e) => {
+const logout = e => {
   e.preventDefault();
   sessionStorage.clear();
   return document.body.innerHTML =

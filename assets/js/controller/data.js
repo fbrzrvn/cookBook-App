@@ -2,14 +2,14 @@ import { renderAddedFavoriteRecipe } from '../components/favorite.js';
 
 
 
-const saveRecipe = (recipe) => {
+const saveRecipe = recipe => {
   let recipesList = JSON.parse(localStorage.getItem('allRecipe')) || [];
   recipesList.push(recipe);
   return localStorage.setItem('allRecipe', JSON.stringify(recipe));
 }
 
 
-const searchRecipe = (e) => {
+const searchRecipe = e => {
   e.preventDefault();
   let recipes = JSON.parse(localStorage.getItem('allRecipe'));
   let result = [];
@@ -29,7 +29,7 @@ const searchRecipe = (e) => {
 }
 
 
-const renderSearchResult = (result) => {
+const renderSearchResult = result => {
 
   if (result.length === 0) {
 
@@ -162,7 +162,7 @@ const renderRecipe = () => {
 }
 
 
-const renderRecipeDetails = (e) => {
+const renderRecipeDetails = e => {
   let recipes = JSON.parse(localStorage.getItem('allRecipe'));
   let card = document.querySelector('.recipe__card');
 

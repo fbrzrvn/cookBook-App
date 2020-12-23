@@ -11,7 +11,7 @@ const changeFavoriteIcon = () => {
         addFavoriteToStorage(e);
       } else {
         targetEvent.innerHTML = '<span class="material-icons">favorite_border</span>';
-        // removeRecipeToFavorite(icon);
+        removeRecipeToFavorite(e);
       }
     })
   })
@@ -33,6 +33,7 @@ const addFavoriteToStorage = element => {
 
   if (favorites.includes(foundRecipe)) {
     return;
+
   } else {
     favorites.push(foundRecipe);
     sessionStorage.setItem('favoriteRecipes', JSON.stringify(favorites));
@@ -42,18 +43,23 @@ const addFavoriteToStorage = element => {
 }
 
 
-// const removeRecipeToFavorite = (icon) => {
-//   let favoriteRecipes = JSON.parse(sessionStorage.getItem('favoriteRecipes'));
-//   let targetId = icon.children[0].id;
+const removeRecipeToFavorite = e => {
+  let recipes = JSON.parse(localStorage.getItem('allRecipe'));
 
-//   let targetElement = favoriteRecipes.filter(recipe => recipe.name === targetId);
-//   targetElement.forEach(recipe => recipe.favorite = false);
+  let foundRecipe = recipes.find(recipe => recipe.name === e.path[0].id);
 
-//   console.log(favoriteRecipes);
-// }
+  let index = recipes.indexOf(foundRecipe);
+  if (index !== -1) {
+    recipes[index].favorite = false;
+  }
+
+  localStorage.setItem('allRecipe', JSON.stringify(recipes));
+
+  location.reload();
+}
 
 
-const renderAddedFavoriteRecipe = (recipe) => {
+const renderAddedFavoriteRecipe = recipe => {
 
   if (!recipe) return;
 

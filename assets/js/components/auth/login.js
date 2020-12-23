@@ -4,7 +4,7 @@ const errorLoginUsername = document.getElementById('error-login-username');
 const errorLoginPassword = document.getElementById('error-login-password');
 
 
-const validateUserLogin = (e) => {
+const validateUserLogin = e => {
   e.preventDefault();
   let usersList = JSON.parse(localStorage.getItem('users'));
   let usersName = usersList.map(el => el.name);
